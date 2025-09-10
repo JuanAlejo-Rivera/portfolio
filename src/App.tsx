@@ -40,8 +40,7 @@ export default function Portfolio() {
         </p>
 
         <a
-        target="_blank"
-          href="https://www.google.com/imgres?q=imagen%20del%20mono%20fuck&imgurl=https%3A%2F%2Fi1.sndcdn.com%2Fartworks-bbhKX94ncwayTyEb-WNNpfQ-t500x500.jpg&imgrefurl=https%3A%2F%2Fsoundcloud.com%2Fwilliam-dinkel%2Fwilly-d-x-bauer-we-dont-give-a-fuck-prod-starfish-deathsquad&docid=2DJg13IQnr1VSM&tbnid=MRLnzN8W2uTSLM&vet=12ahUKEwipsNzq_M6PAxWTQzABHWNvAREQM3oECCUQAA..i&w=500&h=500&hcb=2&ved=2ahUKEwipsNzq_M6PAxWTQzABHWNvAREQM3oECCUQAA"
+          href="/cv.pdf"
           className="mt-8 inline-block px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium shadow-lg hover:scale-105 transition-transform"
         >
           Descargar CV
