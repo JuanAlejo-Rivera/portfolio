@@ -3,6 +3,8 @@ import projects from "./data/projects";
 import { useNavigate } from "react-router-dom";
 import DetailsModal from "./components/DetailsModal";
 import { CardLink } from "./components/CardLink";
+import { BookOpen, Briefcase, Code2, GraduationCap, Heart, Rocket } from "lucide-react";
+import AboutMe from "./components/AboutMe";
 
 type ModalData = {
   title: string
@@ -46,16 +48,8 @@ export default function Portfolio() {
         </a>
       </section>
 
-      {/* Sobre mí */}
-      <section className="py-20 px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center">Sobre mí</h2>
-        <p className="text-lg leading-relaxed text-center">
-          Soy un desarrollador junior con experiencia práctica en proyectos
-          fullstack usando React, TypeScript y Node.js. Me gusta trabajar en
-          equipo, aprender nuevas tecnologías y enfocarme en la experiencia de
-          usuario.
-        </p>
-      </section>
+
+      <AboutMe />
 
       {/* Proyectos */}
       <section className="py-20 px-6 bg-gray-100 dark:bg-gray-800">
