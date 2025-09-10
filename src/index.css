@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+
+
+.btn-primary {
+    @apply bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 hover:opacity-90 transition w-full p-3
+}
+
+.btn-secondary {
+    @apply bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 hover:opacity-90 transition
+}
+
+.text-gradient {
+    @apply bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent
+}
+
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-bg {
+  background: linear-gradient(-210deg, #000000, #1e293b, #2563eb, #111827);
+  background-size: 250% 250%;
+  animation: gradient 5s ease infinite;
+}
+
+
+/* @keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animated-bg {
+  background: conic-gradient(from 0deg, #000000, #1e293b, #2563eb, #111827);
+  animation: rotate 15s linear infinite;
+} */
