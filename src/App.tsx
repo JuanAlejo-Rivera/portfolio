@@ -3,7 +3,6 @@ import projects from "./data/projects";
 import { useNavigate } from "react-router-dom";
 import DetailsModal from "./components/DetailsModal";
 import { CardLink } from "./components/CardLink";
-import { BookOpen, Briefcase, Code2, GraduationCap, Heart, Rocket } from "lucide-react";
 import AboutMe from "./components/AboutMe";
 
 type ModalData = {
@@ -62,12 +61,12 @@ export default function Portfolio() {
             >
               <div className="h- bg-gray-300 dark:bg-gray-600 rounded-xl mb-4">
                 <img
-                  src={images[0]} // 👈 mostramos solo la primera como preview
+                  src={images[0]} 
                   alt={`Imagen de ${title}`}
                   className="rounded-xl w-full max-h-[60vh] object-cover transition-transform duration-300 hover:scale-105"
                   onClick={() => {
                     navigate(location.pathname + "?details=true")
-                    setModalData({ title, description, images }) // 👈 pasamos todas
+                    setModalData({ title, description, images }) 
                   }}
                 />
               </div>
@@ -75,7 +74,7 @@ export default function Portfolio() {
                 className="cursor-pointer hover:underline text-slate-300"
                 onClick={() => {
                   navigate(location.pathname + "?details=true")
-                  setModalData({ title, description, images }) // 👈 pasamos todas
+                  setModalData({ title, description, images }) 
                 }}
               >
                 Ver más
