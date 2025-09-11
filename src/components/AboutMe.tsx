@@ -2,7 +2,7 @@ import { GraduationCap, BookOpen, Briefcase, Code2, Rocket, Heart } from "lucide
 
 export default function AboutMe() {
     return (
-        <section className="py-20 px-6 max-w-6xl mx-auto">
+        <section className="mb-10 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-10 text-center">Sobre mí</h2>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -64,7 +64,7 @@ export default function AboutMe() {
                         <Rocket className="w-6 h-6" /> Objetivo profesional
                     </h3>
                     <p className="text-gray-300">
-                        Mi objetivo es aportar valor tangible en proyectos, crecer junto a equipos dinámicos y seguir desarrollándome profesionalmente dentro del mundo del software.          </p>
+                        Mi objetivo es aportar valor real en proyectos, crecer junto a equipos dinámicos y seguir desarrollándome profesionalmente dentro del mundo del software.          </p>
                 </div>
 
                 {/* Toque personal */}

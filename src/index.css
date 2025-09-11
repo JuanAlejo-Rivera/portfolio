@@ -28,6 +28,9 @@
   animation: gradient 5s ease infinite;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 /* @keyframes rotate {
   0% { transform: rotate(0deg); }
