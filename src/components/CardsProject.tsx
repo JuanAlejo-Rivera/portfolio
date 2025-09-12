@@ -14,7 +14,6 @@ type PropsCardProjects = {
     setModalData: React.Dispatch<React.SetStateAction<ModalData | undefined>>
 }
 
-
 export default function CardProjects({ setModalData }: PropsCardProjects) {
     const navigate = useNavigate();
 
