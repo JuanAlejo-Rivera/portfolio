@@ -54,7 +54,7 @@ export default function Portfolio() {
         <section className="py-20 px-6 bg-gray-100 dark:bg-gray-800">
           <h2 className="title-text">Proyectos</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto ">
-            {projects.map(({ title, description, images, deploy, repository, backRepository }, i) => (
+            {projects.map(({ title, description, images, deploy, repository, backRepository, tecnologias }, i) => (
               <div
                 key={i}
                 className="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 flex flex-col h-full"
@@ -83,6 +83,7 @@ export default function Portfolio() {
                 </button>
                 <h3 className="text-xl font-semibold">Proyecto: {title}</h3>
                 <p className="text-sm mt-2 flex-1">{description}</p>
+                <p className="text-sm mt-2 flex-1">{tecnologias}</p>
 
                 <CardLink deploy={deploy} repository={repository} backRepository={backRepository} />
 
