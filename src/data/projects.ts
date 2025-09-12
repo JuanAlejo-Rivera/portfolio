@@ -4,6 +4,7 @@ type Project = {
     images: string[];
     deploy: string;
     repository: string;
+    backRepository?: string;
 };
 
 
@@ -47,6 +48,7 @@ const projects: Project[] = [
         images: ['img/coAgenda.png', 'img/coAgendaView.png', 'img/coAgendaEvent.png', 'img/coAgendaEvent2.png', 'img/coAgendagenda.png', 'img/mes.png'],
         deploy: "https://co-agenda-frontend.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/CoAgenda_Frontend",
+        backRepository: "https://github.com/JuanAlejo-Rivera/CoAgenda_Backend",
 
     },
     {
@@ -55,6 +57,8 @@ const projects: Project[] = [
         images: ['img/TaskView1.png', 'img/TaskView2.png', 'img/TaskView3.png', 'img/TaskProjects3.png', 'img/TaskTask4.png', 'img/TaskTask5.png', 'img/Taskcolabor6.png', 'img/TaskPerfil.png', 'img/TaskPassword.png', 'img/TaskMailtrap.png', 'img/TaskConfirm.png'],
         deploy: "https://taskly-frontend-rosy-nu.vercel.app/auth/login",
         repository: "https://github.com/JuanAlejo-Rivera/TaskLy_Frontend",
+        backRepository: "https://github.com/JuanAlejo-Rivera/TaskLy_backend",
+
     }
 ];
 

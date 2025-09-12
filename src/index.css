@@ -4,22 +4,41 @@
 
 
 .btn-primary {
-    @apply bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 hover:opacity-90 transition w-full p-3
+  @apply bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 hover:opacity-90 transition w-full p-3
 }
 
 .btn-secondary {
-    @apply bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 hover:opacity-90 transition
+  @apply bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 hover:opacity-90 transition
 }
 
 .text-gradient {
-    @apply bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent
+  @apply bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent
 }
 
+.arrow {
+  @apply fixed bottom-6 right-6 p-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg hover:scale-110 transition
+}
+
+.title-text {
+  @apply text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent
+}
+
+.card-format{
+  @apply bg-gray-800 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform
+}
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animated-bg {

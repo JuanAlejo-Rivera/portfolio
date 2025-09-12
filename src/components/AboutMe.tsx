@@ -3,11 +3,13 @@ import { GraduationCap, BookOpen, Briefcase, Code2, Rocket, Heart } from "lucide
 export default function AboutMe() {
     return (
         <section className="mb-10 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-10 text-center">Sobre mí</h2>
+            <h2 className="title-text">
+                Sobre mí
+            </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
                 {/* Formación */}
-                <div className="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div className="card-format">
                     <h3 className="flex items-center gap-2 text-xl font-semibold text-cyan-400 mb-3">
                         <GraduationCap className="w-6 h-6" /> Formación
                     </h3>
@@ -20,7 +22,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Cursos */}
-                <div className="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div className="card-format">
                     <h3 className="flex items-center gap-2 text-xl font-semibold text-cyan-400 mb-3">
                         <BookOpen className="w-6 h-6" /> Cursos y certificaciones
                     </h3>
@@ -33,7 +35,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Experiencia */}
-                <div className="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div className="card-format">
                     <h3 className="flex items-center gap-2 text-xl font-semibold text-cyan-400 mb-3">
                         <Briefcase className="w-6 h-6" /> Experiencia
                     </h3>
@@ -47,7 +49,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Habilidades */}
-                <div className="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div className="card-format">
                     <h3 className="flex items-center gap-2 text-xl font-semibold text-cyan-400 mb-3">
                         <Code2 className="w-6 h-6" /> Habilidades
                     </h3>
@@ -59,7 +61,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Objetivo profesional */}
-                <div className="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div className="card-format">
                     <h3 className="flex items-center gap-2 text-xl font-semibold text-cyan-400 mb-3">
                         <Rocket className="w-6 h-6" /> Objetivo profesional
                     </h3>
@@ -68,7 +70,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Toque personal */}
-                <div className="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div className="card-format">
                     <h3 className="flex items-center gap-2 text-xl font-semibold text-cyan-400 mb-3">
                         <Heart className="w-6 h-6" /> Más allá del código
                     </h3>

@@ -2,7 +2,7 @@
 export default function Skills() {
     return (
         <section className="py-20 px-6 max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Habilidades</h2>
+            <h2 className="title-text">Habilidades</h2>
 
             <div className="space-y-8">
                 {/* Frontend */}
