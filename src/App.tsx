@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import { ArrowBigUp } from "lucide-react";
 import ContactMe from "./components/ContactMe";
 import Profile from "./components/Profile";
+import Preloader from "./components/Preloader";
 
 type ModalData = {
   title: string
@@ -22,11 +23,15 @@ export default function Portfolio() {
 
   const [showArrow, setShowArrow] = useState(false)
 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
+  useEffect(() => {
     const handleScroll = () => window.scrollY > 300 ? setShowArrow(true) : setShowArrow(false)
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -38,6 +43,9 @@ export default function Portfolio() {
     })
   }
 
+  if (loading) {
+    return <Preloader />;
+  }
 
 
   return (
