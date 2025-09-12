@@ -1,6 +1,7 @@
 type Project = {
     title: string;
     description: string;
+    fulldescription: string;
     tecnologias: string;
     images: string[];
     deploy: string;
@@ -14,6 +15,7 @@ const projects: Project[] = [
     {
         title: "Eccommerce, GamerCore",
         description: `Plataforma de comercio electrónico para productos gamer, con catálogo dinámico y carrito de compras persistente.`,
+        fulldescription: "Aplicación de comercio electrónico enfocada en productos gamer y componentes de PC. Permite a los usuarios explorar un catálogo dinámico, gestionar un carrito de compras persistente y calcular automáticamente el total de sus pedidos.",
         tecnologias: "🚀 Tecnologías: React, TypeScript, Zustand, TailwindCSS, Node.js, MongoDB.",
         images: ["img/catalogo.png", "img/carrito.png", "img/telefono.png"],
         deploy: "https://gamer-core-ecommerce.vercel.app/",
@@ -22,7 +24,8 @@ const projects: Project[] = [
     {
         title: "Buscador de recetas, Drinks Finder",
         description: "Buscador de recetas de cócteles según ingredientes disponibles, con filtrado por categorías.",
-        tecnologias: "🚀 Tecnologías: React, TypeScript, TailwindCSS, API pública de cocktails.",
+        fulldescription: "Buscador de recetas de bebidas que consume una API externa para mostrar tragos según ingredientes o categorías. Ofrece detalles completos de preparación y presentación, optimizado para usabilidad tanto en dispositivos móviles como en desktop.",
+        tecnologias: "🚀 Tecnologías: React, TypeScript, Zustand, TailwindCSS, Axios, Zod, HeadlessUI, API pública de cocktails.",
         images: ['img/buscador.png', "img/receta.png", "/img/drinkMobile.png"],
         deploy: "https://drinks-recipe-finder.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/Drinks-recipe-finder",
@@ -32,7 +35,8 @@ const projects: Project[] = [
     {
         title: "Planificador de gastos",
         description: "Aplicación para registrar ingresos y gastos, calcular presupuestos y mantener control financiero.",
-        tecnologias: "🚀 Tecnologías: React, Context API, TailwindCSS.",
+        fulldescription: "Aplicación enfocada en la planificación de finanzas personales, donde el usuario puede definir un presupuesto y gestionar sus gastos para mantener el control de su dinero. Incluye validación de datos, alertas dinámicas y diseño adaptable para dispositivos móviles y escritorio.",
+        tecnologias: "🚀 Tecnologías: React, TypeScript, TailwindCSS, React Calendar, React Toastify, SweetAlert2",
         images: ['img/pView.png', "img/uso.png", "img/pMobile.png"],
         deploy: "https://budget-controller-rust.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/budget-controller",
@@ -41,7 +45,8 @@ const projects: Project[] = [
     {
         title: "Diario de notas, Jotter journal",
         description: "Aplicación para crear, editar y gestionar notas personales con autenticación segura.",
-        tecnologias: "🚀 Tecnologías: React, TypeScript, TailwindCSS, Node.js, MongoDB.",
+        fulldescription: "Aplicación web tipo diario personal donde los usuarios pueden crear, editar y eliminar notas con soporte para imágenes. Incluye autenticación de usuarios, guardado seguro en la nube y una interfaz moderna e intuitiva. Ideal para organizar ideas y llevar un registro digital de manera práctica.",
+        tecnologias: "🚀 Tecnologías: React, Redux Toolkit, Firebase, Cloudinary, Material UI, SweetAlert2",
         images: ['img/jotter.png', 'img/jotterView.png', 'img/jotterNotece.png', 'img/jotterMemo.png', 'img/mobileMenu.png', 'img/mobileMenu2.png'],
         deploy: "https://jotter-journal.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/JotterJournal",
@@ -50,7 +55,8 @@ const projects: Project[] = [
     {
         title: "Calendario de eventos, CoAgenda",
         description: "Calendario interactivo para gestionar eventos con login y registro de usuarios.",
-        tecnologias: "🚀 Tecnologías: React, TypeScript, TailwindCSS, Node.js, MongoDB.",
+        fulldescription: "Aplicación web para organizar y gestionar eventos en un calendario visual e interactivo. Permite crear, editar y eliminar eventos de manera sencilla, conectada a un backend propio que expone una API REST para la autenticación de usuarios y la persistencia de datos.",
+        tecnologias: "🚀 Tecnologías: React, Redux Toolkit, React Big Calendar, Axios, SweetAlert2, Node.js, Express, MongoDB",
         images: ['img/coAgenda.png', 'img/coAgendaView.png', 'img/coAgendaEvent.png', 'img/coAgendaEvent2.png', 'img/coAgendagenda.png', 'img/mes.png'],
         deploy: "https://co-agenda-frontend.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/CoAgenda_Frontend",
@@ -60,7 +66,8 @@ const projects: Project[] = [
     {
         title: "Gestor de proyectos, TaskLy",
         description: "Gestor de proyectos con autenticación y control de tareas colaborativas.",
-        tecnologias: "🚀 Tecnologías: React, TypeScript, TailwindCSS, Node.js, MongoDB.",
+        fulldescription: "Gestor de proyectos colaborativo que permite a los usuarios crear cuentas, administrar proyectos y asignar tareas en equipo. Incluye autenticación segura con confirmación por correo, manejo de colaboradores, actualización del estado de tareas y control de accesos. El frontend está desarrollado con React y TailwindCSS, mientras que el backend implementa una API REST con Node.js, Express y MongoDB para la persistencia de datos y la lógica de negocio.",
+        tecnologias: "🚀 Tecnologías: React, TypeScript, TailwindCSS, React Query, React Hook Form, Zod, Axios, DnD Kit, Node.js, Express, MongoDB, JWT, Nodemailer",
         images: ['img/TaskView1.png', 'img/TaskView2.png', 'img/TaskView3.png', 'img/TaskProjects3.png', 'img/TaskTask4.png', 'img/TaskTask5.png', 'img/Taskcolabor6.png', 'img/TaskPerfil.png', 'img/TaskPassword.png', 'img/TaskMailtrap.png', 'img/TaskConfirm.png'],
         deploy: "https://taskly-frontend-rosy-nu.vercel.app/auth/login",
         repository: "https://github.com/JuanAlejo-Rivera/TaskLy_Frontend",

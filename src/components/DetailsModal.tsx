@@ -12,12 +12,12 @@ type DetailsModalProps = {
         title: string
         description: string
         images: string[]
+        fulldescription: string
     }
 }
 
 
 export default function DetailsModal({ data }: DetailsModalProps) {
-    // console.log(data?.images)
     const navigate = useNavigate();
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -59,7 +59,7 @@ export default function DetailsModal({ data }: DetailsModalProps) {
                                         {data?.title} 🚀
                                     </DialogTitle>
                                     <p className="text-gray-600 dark:text-gray-300">
-                                        {data?.description}
+                                        {data?.fulldescription}
                                     </p>
                                     {/* Carrusel Swiper */}
                                     {data?.images && data.images.length > 0 && (
@@ -70,7 +70,7 @@ export default function DetailsModal({ data }: DetailsModalProps) {
                                             slidesPerView={1}
                                             className="rounded-xl overflow-hidden"
                                         >
-                                            
+
                                             {data.images.map((img, idx) => (
 
                                                 <SwiperSlide key={idx} className="flex items-center justify-center">

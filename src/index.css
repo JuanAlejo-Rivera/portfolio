@@ -20,7 +20,7 @@
 }
 
 .title-text {
-  @apply text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent
+  @apply text-4xl font-extrabold text-center mb-10 bg-gradient-to-r text-white bg-clip-text text-transparent
 }
 
 .card-format{
