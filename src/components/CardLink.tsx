@@ -24,7 +24,7 @@ export const CardLink = ({ deploy, repository, backRepository }: deployProps) =>
                     rel="noopener noreferrer"
                     className="px-4 py-2 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition w-fit sm"
                 >
-                    Repositorio FrontEnd
+                    Repositorio Frontend
                 </a>
                 {backRepository && (
                     <a
@@ -33,7 +33,7 @@ export const CardLink = ({ deploy, repository, backRepository }: deployProps) =>
                         rel="noopener noreferrer"
                         className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition w-fit"
                     >
-                        Repositorio BackEnd
+                        Repositorio Backend
                     </a>
                 )}
             </div>

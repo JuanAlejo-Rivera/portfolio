@@ -25,10 +25,10 @@ export default function Portfolio() {
   useEffect(() => {
 
     const handleScroll = () => window.scrollY > 300 ? setShowArrow(true) : setShowArrow(false)
-    
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleScrollTop = () => {
     window.scrollTo({
@@ -63,7 +63,9 @@ export default function Portfolio() {
                   <img
                     src={images[0]}
                     alt={`Imagen de ${title}`}
-                    className="rounded-xl w-full max-h-[60vh] object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-55 rounded-xl object-cov transition-transform hover:scale-105"
+                    // className="w-full h-60 object-cover rounded-xl transition-transform hover:scale-105"
+
                     onClick={() => {
                       navigate(location.pathname + "?details=true")
                       setModalData({ title, description, images })
