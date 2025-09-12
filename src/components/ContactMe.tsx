@@ -3,7 +3,7 @@ export default function ContactMe() {
         <section className="py-20 px-6 bg-gray-100 dark:bg-gray-800 text-center">
             <h2 className="title-text">Contacto</h2>
             <p className="mb-6">
-                ¿Querés charlar? Escribime a{" "}
+                ¿Quieres contactar conmigo? Escribime a{" "}
                 <a href="mailto:tuemail@gmail.com" className="text-blue-500">
                     juanalejandroro25@gmail.com
                 </a>
