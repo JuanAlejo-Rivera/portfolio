@@ -18,8 +18,6 @@ type PropsCardProjects = {
 export default function CardProjects({ setModalData }: PropsCardProjects) {
     const navigate = useNavigate();
 
-
-
     return (
         <section className="py-20 px-6 bg-gray-100 dark:bg-gray-800">
             <h2 className="title-text">Proyectos</h2>
