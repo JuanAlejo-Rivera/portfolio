@@ -6,7 +6,7 @@ import { ArrowBigUp } from "lucide-react";
 import ContactMe from "./components/ContactMe";
 import Profile from "./components/Profile";
 import Preloader from "./components/Preloader";
-import CardProjects from "./components/cardProjects";
+import CardProjects from "./components/CardsProject";
 
 type ModalData = {
   title: string
