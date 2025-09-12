@@ -1,40 +1,47 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
-  const [show, setShow] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 2500); 
+    const timer = setTimeout(() => setLoading(false), 2500); 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <AnimatePresence>
-      {show && (
+      {loading && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          exit={{ opacity: 0, transition: { duration: 0.8 } }}
+          className="fixed inset-0 flex flex-col items-center justify-center bg-black text-white z-50"
         >
           <motion.h1
-            className="text-4xl md:text-6xl font-light tracking-widest"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-4xl md:text-6xl font-bold tracking-wider"
           >
-            Juan Alejandro Rivera
+           Juan Alejandro Rivera
           </motion.h1>
 
-          <motion.p
-            className="mt-3 text-lg md:text-2xl font-extralight text-gray-300 tracking-[0.3em]"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
+          {/* Línea animada */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "120px" }}
+            transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
+            className="h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 mt-4 mb-4"
+          />
+
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="text-lg md:text-2xl tracking-[0.3em] text-gray-300"
           >
             Portafolio
-          </motion.p>
+          </motion.h2>
         </motion.div>
       )}
     </AnimatePresence>
