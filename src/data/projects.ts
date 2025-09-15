@@ -27,7 +27,7 @@ const projects: Project[] = [
         fulldescription: "Buscador de recetas de bebidas que consume una API externa para mostrar tragos según ingredientes o categorías. Ofrece detalles completos de preparación y presentación, optimizado para usabilidad tanto en dispositivos móviles como en desktop.",
         tecnologias: "🚀 Tecnologías: React, TypeScript, Zustand, TailwindCSS, Axios, Zod, HeadlessUI, API pública de cocktails.",
         images: ['img/buscador.png', "img/receta.png", "/img/drinkMobile.png"],
-        deploy: "https://drinks-recipe-finder.vercel.app/",
+        deploy: "https://drinks-finder-blush.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/Drinks-recipe-finder",
 
 
