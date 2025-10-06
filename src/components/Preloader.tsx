@@ -17,7 +17,6 @@ export default function Preloader() {
           exit={{ opacity: 0, transition: { duration: 1 } }}
           className="fixed inset-0 flex flex-col items-center justify-center bg-black text-white z-50"
         >
-          {/* Nombre */}
           <motion.h1
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -26,7 +25,6 @@ export default function Preloader() {
           >
             Juan Alejandro Rivera
 
-            {/* Glow blanco animado detrás del texto */}
             <motion.span
               className="absolute inset-0 blur-2xl bg-white opacity-30"
               animate={{
@@ -40,7 +38,6 @@ export default function Preloader() {
             />
           </motion.h1>
 
-          {/* Línea animada con colores */}
           <motion.div
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: "140px", opacity: 1 }}
@@ -61,7 +58,6 @@ export default function Preloader() {
             />
           </motion.div>
 
-          {/* Subtítulo */}
           <motion.h2
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}

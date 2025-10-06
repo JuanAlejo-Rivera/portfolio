@@ -34,8 +34,8 @@ export default function Profile() {
 
       <animated.a
         style={fadeInUp}
-        href="/doc/cv-juan-alejandro-rivera.pdf"
-        download={"cv-juan-alejandro-rivera.pdf"}
+        href="/doc/Juan-Rivera-CV.pdf"
+        download={"Juan_Rivera_CV.pdf"}
         className="mt-8 inline-block px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium shadow-lg hover:scale-105 transition-transform"
       >
         Descargar CV
