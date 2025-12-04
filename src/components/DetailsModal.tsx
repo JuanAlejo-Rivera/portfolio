@@ -54,46 +54,48 @@ export default function DetailsModal({ data }: DetailsModalProps) {
                                 leaveTo="opacity-0 scale-95"
                             >
 
-                                <DialogPanel className="max-w-2xl h-auto transform overflow-hidden rounded-2xl bg-white dark:bg-gray-800 p-6 text-left shadow-xl transition-all">
-                                    <DialogTitle className="text-xl text-slate-200 font-thin mb-4">
-                                        {data?.title} 🚀
-                                    </DialogTitle>
-                                    <p className="text-gray-600 dark:text-gray-300">
+                                <DialogPanel className="max-w-4xl w-full h-auto transform overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 p-8 text-left shadow-2xl border-2 border-cyan-500/30 backdrop-blur-xl transition-all">
+                                    <div className="relative mb-6">
+                                        <DialogTitle className="text-3xl md:text-4xl font-black text-transparent bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text mb-4 drop-shadow-lg">
+                                            {data?.title}
+                                        </DialogTitle>
+                                        <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/50" />
+                                    </div>
+                                    
+                                    <p className="text-slate-300 leading-relaxed text-base md:text-lg mb-8">
                                         {data?.fulldescription}
                                     </p>
-                                    {/* Carrusel Swiper */}
+                                    
                                     {data?.images && data.images.length > 0 && (
-                                        <Swiper
-                                            navigation
-                                            modules={[Navigation]}
-                                            spaceBetween={10}
-                                            slidesPerView={1}
-                                            className="rounded-xl overflow-hidden"
-                                        >
-
-                                            {data.images.map((img, idx) => (
-
-                                                <SwiperSlide key={idx} className="flex items-center justify-center">
-                                                    <div className="flex items-center justify-center h-[70vh] w-full">
-                                                        <img
-                                                            src={img}
-                                                            alt={`${data?.title ?? "proyecto"} screenshot ${idx + 1}`}
-                                                            className="w-full max-h-[60vh] lg:max-h-[70vh] object-contain rounded-xl"
-                                                        />
-                                                    </div>
-                                                </SwiperSlide>
-
-
-
-                                            ))}
-                                        </Swiper>
+                                        <div className="relative rounded-2xl overflow-hidden border-2 border-slate-700/50 shadow-2xl mb-6">
+                                            <Swiper
+                                                navigation
+                                                modules={[Navigation]}
+                                                spaceBetween={0}
+                                                slidesPerView={1}
+                                                className="rounded-2xl"
+                                            >
+                                                {data.images.map((img, idx) => (
+                                                    <SwiperSlide key={idx} className="flex items-center justify-center bg-slate-950">
+                                                        <div className="flex items-center justify-center min-h-[50vh] md:min-h-[60vh] w-full p-4">
+                                                            <img
+                                                                src={img}
+                                                                alt={`${data?.title ?? "proyecto"} captura ${idx + 1}`}
+                                                                className="w-full max-h-[55vh] md:max-h-[65vh] object-contain rounded-xl shadow-2xl"
+                                                            />
+                                                        </div>
+                                                    </SwiperSlide>
+                                                ))}
+                                            </Swiper>
+                                            <div className="absolute inset-0 pointer-events-none border-2 border-cyan-500/20 rounded-2xl" />
+                                        </div>
                                     )}
 
                                     <button
-                                        className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600"
+                                        className="mt-4 px-8 py-3 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
                                         onClick={() => navigate(location.pathname, { replace: true })}
                                     >
-                                        Cerrar
+                                        ✕ Cerrar
                                     </button>
                                 </DialogPanel>
 

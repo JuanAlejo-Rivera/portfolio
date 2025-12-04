@@ -18,9 +18,25 @@ export default function CardProjects({ setModalData }: PropsCardProjects) {
     const navigate = useNavigate();
 
     return (
-        <section className="py-20 px-6 bg-gray-100 dark:bg-gray-800">
-            <h2 className="title-text">Proyectos</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto ">
+        <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-20" />
+            
+            
+            <div className="text-center mb-24 relative z-10">
+                <span className="inline-block px-4 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded-full text-indigo-400 text-sm font-mono mb-4">
+                    &lt;projects /&gt;
+                </span>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black mb-4">
+                    <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+                        Proyectos
+                    </span>
+                </h2>
+                <p className="text-slate-400 text-lg font-mono"></p>
+            </div>
+            
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
                 {projects.map(
                     (
                         { title, description, images, deploy, repository, backRepository, tecnologias, fulldescription },
@@ -28,51 +44,63 @@ export default function CardProjects({ setModalData }: PropsCardProjects) {
                     ) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.1, delay: i * 0.1 }}
+                            initial={{ opacity: 0, y: 60, rotateX: -15 }}
+                            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                            transition={{ duration: 0.6, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 flex flex-col h-full 
-                       transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                            className="group perspective-1000"
                         >
-                            <div className="h- bg-gray-300 dark:bg-gray-600 rounded-xl mb-4">
-                                <img
-                                    src={images[0]}
-                                    alt={`Imagen de ${title}`}
-                                    className="w-full h-55 rounded-xl object-cov transition-transform hover:scale-105 cursor-pointer"
-                                    onClick={() => {
-                                        navigate(location.pathname + "?details=true");
-                                        setModalData({ title, description, images, fulldescription });
-                                    }}
-                                />
-                            </div>
-                            <button
-                                className="cursor-pointer hover:underline text-slate-300"
-                                onClick={() => {
-                                    navigate(location.pathname + "?details=true");
-                                    setModalData({ title, description, images, fulldescription });
-                                }}
-                            >
-                                Ver más
-                            </button>
-                            <h3 className="text-xl font-semibold">Proyecto: {title}</h3>
-                            <p className="text-sm mt-3 flex-1">{description}</p>
-                            <motion.p
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.3 }}
-                                className="text-sm mt-3 px-3 py-1 bg-gradient-to-r from-slate-200 to-slate-300 
-                         dark:from-gray-700 dark:to-gray-800 text-gray-900 dark:text-gray-100 
-                         rounded-md font-medium tracking-wide shadow-sm"
-                            >
-                                {tecnologias}
-                            </motion.p>
+                            <div className="relative preserve-3d transition-all duration-500 hover:rotateY-5 hover:-translate-y-4">
+                                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
+                                
+                                <div className="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col h-full backdrop-blur-xl">
+                                    <div className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/50">
+                                        {String(i + 1).padStart(2, '0')}
+                                    </div>
+                                    
+                                    <div className="relative h-52 rounded-xl mb-6 overflow-hidden group-hover:shadow-2xl group-hover:shadow-cyan-500/20 transition-all duration-500">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                                        <img
+                                            src={images[0]}
+                                            alt={`${title} screenshot`}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer"
+                                            onClick={() => {
+                                                navigate(location.pathname + "?details=true");
+                                                setModalData({ title, description, images, fulldescription });
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent translate-y-[-100%] group-hover:translate-y-[100%] transition-transform duration-1000" />
+                                    </div>
+                                    
+                                    <h3 className="text-2xl font-black mb-3 bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">
+                                        {title}
+                                    </h3>
+                                    
+                                    <p className="text-slate-400 leading-relaxed mb-4 flex-1 text-sm">{description}</p>
+                                    
+                                    <div className="mb-4 px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-lg">
+                                        <p className="text-xs text-cyan-400 font-mono">{tecnologias}</p>
+                                    </div>
+                                    
+                                    <button
+                                        onClick={() => {
+                                            navigate(location.pathname + "?details=true");
+                                            setModalData({ title, description, images, fulldescription });
+                                        }}
+                                        className="px-4 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg font-semibold text-sm hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50 mb-4"
+                                    >
+                                        Ver detalles →
+                                    </button>
 
-                            <CardLink
-                                deploy={deploy}
-                                repository={repository}
-                                backRepository={backRepository}
-                            />
+                                    <div className="mt-6">
+                                        <CardLink
+                                            deploy={deploy}
+                                            repository={repository}
+                                            backRepository={backRepository}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
                     )
                 )}

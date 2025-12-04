@@ -32,7 +32,7 @@ export default function AboutMe() {
             title: "Experiencia",
             text: (
                 <>
-                    +1 año como programador en <span className="font-semibold">Talent.com</span>,
+                    +2 años como programador en <span className="font-semibold">Talent.com</span>,
                     desarrollando soluciones de <span className="font-semibold">web scraping</span> y automatización.
                     Proyectos personales destacados: <span className="font-semibold">e-commerce</span>,
                     <span className="font-semibold"> buscador de recetas</span> y
@@ -81,10 +81,14 @@ export default function AboutMe() {
     });
 
     return (
-        <section className="mb-10 max-w-6xl mx-auto">
-            <h2 className="title-text">Sobre mí</h2>
+        <section className="mb-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <h2 className="text-4xl sm:text-5xl font-black text-center mb-12 bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
+                Sobre mí
+            </h2>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 {trail.map((style, i) => (
                     <animated.div
                         key={i}
@@ -92,12 +96,15 @@ export default function AboutMe() {
                             opacity: style.opacity,
                             transform: style.y.to((y) => `translateY(${y}px)`),
                         }}
-                        className="card-format"
+                        className="group bg-gradient-to-br from-slate-800/80 via-slate-900/80 to-blue-950/80 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-xl border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-1"
                     >
-                        <h3 className="flex items-center gap-2 text-xl font-semibold text-cyan-400 mb-3">
-                            {cards[i].icon} {cards[i].title}
+                        
+                        <h3 className="flex items-center gap-3 text-xl lg:text-2xl font-bold text-cyan-400 mb-4 group-hover:text-cyan-300 transition-colors">
+                            <span className="text-3xl">{cards[i].icon}</span>
+                            {cards[i].title}
                         </h3>
-                        <p className="text-gray-300">{cards[i].text}</p>
+                        
+                        <p className="text-slate-300 leading-relaxed text-base lg:text-lg">{cards[i].text}</p>
                     </animated.div>
                 ))}
             </div>
