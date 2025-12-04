@@ -1,6 +1,7 @@
 import { useSpring, animated } from "@react-spring/web";
 import NavBar from './NavBar';
 import { Typewriter } from 'react-simple-typewriter';
+import { fireworkConfetti } from "./fireworkConfetti";
 
 export default function Profile() {
   const fadeInUp = useSpring({
@@ -82,6 +83,7 @@ export default function Profile() {
             download={"Juan_Rivera_CV.pdf"}
             className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-cyan-400/30 hover:border-cyan-400/70 shadow-[0_0_16px_2px_#22d3ee55,0_0_0_2px_#fff2_inset] hover:shadow-[0_0_32px_8px_rgba(34,211,238,0.45)] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/30 overflow-hidden" 
             aria-label="Descargar mi currículum vitae"
+            onClick={fireworkConfetti}
           >
             <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 opacity-40 group-hover:opacity-60 blur-sm animate-gradient-x z-0 transition-all duration-500" />
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-y-1 group-hover:scale-110">

@@ -44,27 +44,21 @@ export default function Portfolio() {
     return <Preloader />;
   }
 
-
   return (
-    <div className="min-h-screen animated-bg text-white">
+    <div className="relative min-h-screen w-full bg-slate-900">
       <Profile />
-
       <section id="about-me" className="py-10">
         <AboutMe />
       </section>
-
       <section id="projects" className="py-20 scroll-mt-[-150px]">
         <CardProjects setModalData={setModalData} />
       </section>
-
       <section id="skills">
         <Skills />
       </section>
-
       <section id="contact" className="py-20">
         <ContactMe />
       </section>
-
       {showArrow && (
         <button
           onClick={handleScrollTop}
@@ -74,8 +68,6 @@ export default function Portfolio() {
           <ArrowBigUp size={24} />
         </button>
       )}
-
-
       <a
         href="https://wa.me/573185754076"
         target="_blank"
@@ -88,7 +80,6 @@ export default function Portfolio() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M21 12c0 4.97-4.03 9-9 9a8.96 8.96 0 01-4.488-1.19L3 21l1.19-4.488A8.96 8.96 0 013 12c0-4.97 4.03-9 9-9s9 4.03 9 9z" />
         </svg>
       </a>
-
       <footer className="w-full py-10 px-4 md:px-8 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 text-center mt-20 border-t-2 border-cyan-400/30 shadow-2xl">
         <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto gap-6">
           <p className="text-slate-300 text-sm md:text-base font-medium">
@@ -113,7 +104,6 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
-
       <DetailsModal data={modalData} />
     </div>
   );
