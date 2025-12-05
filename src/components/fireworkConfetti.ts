@@ -1,5 +1,4 @@
-import React from "react";
-import confetti from "canvas-confetti";
+import confetti from 'canvas-confetti';
 
 export function fireworkConfetti() {
   const duration = 900;
@@ -10,7 +9,7 @@ export function fireworkConfetti() {
     ticks: 60,
     zIndex: 9999,
     colors: ["#00eaff", "#7f5cff", "#00ffa6", "#fff700", "#ff3c6e"],
-    shapes: ["circle"],
+    shapes: ["circle" as const],
     scalar: 1.1,
     origin: { y: 0.6 }
   };
