@@ -7,6 +7,7 @@ import ContactMe from "./components/ContactMe";
 import Profile from "./components/Profile";
 import Preloader from "./components/Preloader";
 import CardProjects from "./components/CardsProject";
+import SnowfallEffect from "./components/SnowfallEffect";
 
 type ModalData = {
   title: string
@@ -21,6 +22,9 @@ export default function Portfolio() {
   const [showArrow, setShowArrow] = useState(false)
 
   const [loading, setLoading] = useState(true);
+
+  // Activar efecto de nieve automáticamente en diciembre sin importar el año
+  const isDecember = new Date().getMonth() === 11;
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1800);
@@ -46,6 +50,8 @@ export default function Portfolio() {
 
   return (
     <div className="relative min-h-screen w-full bg-slate-900">
+      {/* Efecto de nieve - Se activa automáticamente en diciembre */}
+      <SnowfallEffect enabled={isDecember} snowflakeCount={150} />
       <Profile />
       <section id="about-me" className="py-10">
         <AboutMe />
