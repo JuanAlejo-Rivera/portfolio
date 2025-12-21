@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import Preloader from "./components/Preloader";
 import CardProjects from "./components/CardsProject";
 import SnowfallEffect from "./components/SnowfallEffect";
+import { useIsDecember } from "./hooks/useIsDecember";
 
 type ModalData = {
   title: string
@@ -23,8 +24,7 @@ export default function Portfolio() {
 
   const [loading, setLoading] = useState(true);
 
-  // Activar efecto de nieve automáticamente en diciembre sin importar el año
-  const isDecember = new Date().getMonth() === 11;
+  const isDecember = useIsDecember();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1800);

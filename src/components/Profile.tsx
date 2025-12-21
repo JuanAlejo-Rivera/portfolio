@@ -2,8 +2,11 @@ import { useSpring, animated } from "@react-spring/web";
 import NavBar from './NavBar';
 import { Typewriter } from 'react-simple-typewriter';
 import { fireworkConfetti } from "./fireworkConfetti";
+import { useIsDecember } from "../hooks/useIsDecember";
 
 export default function Profile() {
+  const isDecember = useIsDecember();
+  
   const fadeInUp = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
     to: { opacity: 1, transform: 'translateY(0px)' },
@@ -21,18 +24,29 @@ export default function Profile() {
       
       <div className="relative z-10 max-w-6xl mx-auto">
 
-        <animated.div style={fadeInUp} className="flex justify-center mb-12">
-          <div className="relative group">
+        <animated.div style={fadeInUp} className="flex justify-center mb-12 overflow-visible">
+          <div className="relative group overflow-visible">
 
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse" />
-            <div className="relative">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-cyan-400/50 p-2 bg-gradient-to-br from-slate-900 to-blue-950">
+            <div className="relative overflow-visible">
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-cyan-400/50 p-2 bg-gradient-to-br from-slate-900 to-blue-950 relative">
                 <img
                   src="img/perfil.png"
                   alt="Foto de perfil de Juan Alejandro Rivera Oquendo"
                   className="w-full h-full rounded-full object-cover border-2 border-slate-700"
                 />
               </div>
+              
+              {/* Gorro navideño - Solo visible en diciembre */}
+              {isDecember && (
+                <div className="absolute -top-19 md:-top-24 left-13 md:left-17 -translate-x-1/2 pointer-events-none z-20 w-[300px] md:w-[400px]">
+                  <img 
+                    src="img/seasson/christmashatBIG.png" 
+                    alt="Gorro navideño"
+                    className="w-full h-auto drop-shadow-2xl"
+                  />
+                </div>
+              )}
 
               <div className="absolute inset-0 border-2 border-dashed border-cyan-400/30 rounded-full animate-spin [animation-duration:20s]" />
             </div>
