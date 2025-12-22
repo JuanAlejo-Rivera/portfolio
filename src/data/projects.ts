@@ -59,7 +59,7 @@ const projects: Project[] = [
         description: `Plataforma de comercio electrónico para productos gamer, con catálogo dinámico y carrito de compras persistente.`,
         fulldescription: "Aplicación de comercio electrónico enfocada en productos gamer y componentes de PC. Permite a los usuarios explorar un catálogo dinámico, gestionar un carrito de compras persistente y calcular automáticamente el total de sus pedidos.",
         tecnologias: "🚀 Tecnologías: React, TypeScript, Zustand, TailwindCSS, Node.js, MongoDB.",
-        images: ["img/catalogo.png", "img/carrito.png", "img/telefono.png"],
+        images: ["img/gamercore/newCatalog.jpg", "img/gamercore/newMAin.jpg", "img/gamercore/newBurgMenu.jpg", "img/gamercore/carBurgMenu.jpg", "img/gamercore/notifications.jpg"],
         deploy: "https://gamer-core-ecommerce.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/Gamer-Core-ecommerce",
     },
