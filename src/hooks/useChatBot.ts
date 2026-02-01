@@ -4,7 +4,7 @@ import { createChat } from '@n8n/chat';
 export const useChatBot = () => {
     useEffect(() => {
         createChat({
-            webhookUrl: 'https://primary-production-ec56.up.railway.app/webhook/35ebee41-0e73-456e-ad86-e172bb6f5080/chat',
+            webhookUrl: import.meta.env.VITE_CHATBOT_WEBHOOK_URL || '',
             webhookConfig: {
                 method: 'POST',
                 headers: {},
