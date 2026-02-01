@@ -9,6 +9,7 @@ import Preloader from "./components/Preloader";
 import CardProjects from "./components/CardsProject";
 import SnowfallEffect from "./components/SnowfallEffect";
 import { useIsDecember } from "./hooks/useIsDecember";
+import { useChatBot } from "./hooks/useChatBot";
 
 type ModalData = {
   title: string
@@ -18,6 +19,9 @@ type ModalData = {
 }
 
 export default function Portfolio() {
+
+  useChatBot();
+
   const [modalData, setModalData] = useState<ModalData>()
 
   const [showArrow, setShowArrow] = useState(false)
@@ -68,7 +72,7 @@ export default function Portfolio() {
       {showArrow && (
         <button
           onClick={handleScrollTop}
-          className="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 text-white shadow-2xl hover:shadow-cyan-500/50 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+          className="fixed bottom-8 right-25 z-50 p-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 text-white shadow-2xl hover:shadow-cyan-500/50 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
           aria-label="Volver arriba"
         >
           <ArrowBigUp size={24} />

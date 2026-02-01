@@ -3,6 +3,135 @@ html {
 }
 @import "tailwindcss";
 
+/* Estilos personalizados para el chat de n8n */
+:root {
+  --chat--color--primary: #06b6d4 !important;
+  --chat--color--primary-shade-50: #0891b2 !important;
+  --chat--color--primary--shade-100: #0e7490 !important;
+  --chat--color--secondary: #2563eb !important;
+  --chat--color-secondary-shade-50: #1d4ed8 !important;
+  --chat--header--background: linear-gradient(135deg, #06b6d4 0%, #2563eb 50%, #4f46e5 100%) !important;
+  --chat--header--color: #ffffff !important;
+  --chat--toggle--background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%) !important;
+  --chat--toggle--hover--background: linear-gradient(135deg, #0891b2 0%, #1d4ed8 100%) !important;
+  --chat--body--background: rgba(15, 23, 42, 0.95) !important;
+  --chat--footer--background: rgba(30, 41, 59, 0.9) !important;
+  --chat--footer--color: #e2e8f0 !important;
+  --chat--message--bot--background: rgba(30, 41, 59, 0.8) !important;
+  --chat--message--bot--color: #f1f5f9 !important;
+  --chat--message--bot--border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  --chat--message--user--background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%) !important;
+  --chat--message--user--color: #ffffff !important;
+  --chat--input--background: rgba(30, 41, 59, 0.6) !important;
+  --chat--input--border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  --chat--input--text-color: #f1f5f9 !important;
+  --chat--color-light: #1e293b !important;
+  --chat--color-dark: #f1f5f9 !important;
+  --chat--color-white: #f1f5f9 !important;
+  --chat--color-typing: #94a3b8 !important;
+  --chat--window--border-radius: 20px !important;
+  --chat--message--border-radius: 16px !important;
+  --chat--border-radius: 12px !important;
+  --chat--input--send--button--color: #06b6d4 !important;
+  --chat--input--send--button--background: rgba(6, 182, 212, 0.1) !important;
+  --chat--input--send--button--color-hover: #ffffff !important;
+  --chat--input--send--button--background-hover: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%) !important;
+  --chat--window--border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Estilos adicionales para mejorar el UI */
+.chat-window-wrapper .chat-window {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 50px rgba(6, 182, 212, 0.2) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.chat-window-wrapper .chat-window-toggle {
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.6), 0 0 40px rgba(37, 99, 235, 0.4) !important;
+}
+
+.chat-window-wrapper .chat-window-toggle:hover {
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.8), 0 0 60px rgba(37, 99, 235, 0.6) !important;
+}
+
+/* Icono de enviar más visible */
+.chat-input-send-button svg {
+  filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.5));
+}
+
+.chat-input-send-button:hover svg {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+/* Mensajes más redondeados y con sombra */
+.chat-message {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.chat-message.chat-message-from-user {
+  box-shadow: 0 2px 12px rgba(6, 182, 212, 0.4) !important;
+}
+
+/* FORZAR texto visible en TODOS los mensajes */
+.chat-message.chat-message-from-bot,
+.chat-message.chat-message-from-bot *,
+.chat-message.chat-message-from-bot p,
+.chat-message.chat-message-from-bot span,
+.chat-message.chat-message-from-bot div {
+  color: #f1f5f9 !important;
+}
+
+.chat-message.chat-message-from-user,
+.chat-message.chat-message-from-user *,
+.chat-message.chat-message-from-user p,
+.chat-message.chat-message-from-user span,
+.chat-message.chat-message-from-user div {
+  color: #ffffff !important;
+}
+
+.chat-message-markdown,
+.chat-message-markdown *,
+.chat-message-markdown p,
+.chat-message-markdown span,
+.chat-message-markdown div,
+.chat-message-markdown h1,
+.chat-message-markdown h2,
+.chat-message-markdown h3,
+.chat-message-markdown h4,
+.chat-message-markdown h5,
+.chat-message-markdown h6,
+.chat-message-markdown a,
+.chat-message-markdown li,
+.chat-message-markdown ul,
+.chat-message-markdown ol {
+  color: inherit !important;
+}
+
+/* Input con mejor contraste */
+.chat-inputs textarea {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  color: #f1f5f9 !important;
+}
+
+.chat-inputs textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+.chat-inputs textarea:focus {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(6, 182, 212, 0.4) !important;
+}
+
+/* Header más elegante */
+.chat-layout .chat-header {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.chat-layout .chat-header h1,
+.chat-layout .chat-header p,
+.chat-layout .chat-header * {
+  color: #ffffff !important;
+}
+
 
 
 
