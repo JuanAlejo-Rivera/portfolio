@@ -72,7 +72,7 @@ export default function Portfolio() {
       {showArrow && (
         <button
           onClick={handleScrollTop}
-          className="fixed bottom-4.5 right-30 z-70 p-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 text-white shadow-2xl hover:shadow-cyan-500/50 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+          className="fixed bottom-4.5 right-25 z-70 p-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 text-white shadow-2xl hover:shadow-cyan-500/50 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
           aria-label="Volver arriba"
         >
           <ArrowBigUp size={24} />

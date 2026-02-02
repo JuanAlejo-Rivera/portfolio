@@ -3,6 +3,7 @@ html {
 }
 @import "tailwindcss";
 
+
 /* Estilos personalizados para el chat de n8n */
 :root {
   /* Colores */
@@ -41,16 +42,15 @@ html {
 }
 
 /* Estilos adicionales para mejorar el UI */
+.chat-window-wrapper {
+  z-index: 60 !important;
+}
+
 .chat-window-wrapper .chat-window {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 50px rgba(6, 182, 212, 0.2) !important;
   backdrop-filter: blur(20px) !important;
 }
 
-.chat-window-wrapper .chat-window-toggle {
-  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.6), 0 0 40px rgba(37, 99, 235, 0.4) !important;
-  position: relative !important;
-  overflow: visible !important;
-}
 
 /* Tooltip/Popup del bot */
 .chat-window-wrapper .chat-window-toggle::before {
@@ -63,7 +63,7 @@ html {
   margin-right: 15px;
   background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
   color: white;
-  padding: 12px 18px;
+  padding: 9.5px 12px;
   border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -76,24 +76,6 @@ html {
   line-height: 1.4;
 }
 
-.chat-window-wrapper .chat-window-toggle::after {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 7px;
-  border: 8px solid transparent;
-  border-left-color: #06b6d4;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.chat-window-wrapper .chat-window-toggle:hover::before,
-.chat-window-wrapper .chat-window-toggle:hover::after {
-  opacity: 1;
-}
 
 /* Cambiar ícono del botón por un robot emoji */
 .chat-window-wrapper .chat-window-toggle svg {
@@ -298,10 +280,7 @@ html {
   opacity: 1;
 }
 
-/* Botón del chatbot siempre visible pero por debajo del botón de subir */
-.chat-window-wrapper {
-  z-index: 60 !important;
-}
+
 
 /* @keyframes rotate {
   0% { transform: rotate(0deg); }
