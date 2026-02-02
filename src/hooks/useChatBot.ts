@@ -7,7 +7,10 @@ export const useChatBot = () => {
             webhookUrl: import.meta.env.VITE_CHATBOT_WEBHOOK_URL || '',
             webhookConfig: {
                 method: 'POST',
-                headers: {},
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
             },
             mode: 'window',
             chatInputKey: 'chatInput',
