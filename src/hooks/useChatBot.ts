@@ -5,13 +5,6 @@ export const useChatBot = () => {
     useEffect(() => {
         createChat({
             webhookUrl: import.meta.env.VITE_CHATBOT_WEBHOOK_URL || '',
-            webhookConfig: {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-            },
             mode: 'window',
             chatInputKey: 'chatInput',
             chatSessionKey: 'sessionId',
