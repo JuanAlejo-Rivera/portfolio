@@ -5,70 +5,41 @@ html {
 
 /* Estilos personalizados para el chat de n8n */
 :root {
-  /* Colores principales */
   --chat--color--primary: #06b6d4 !important;
+  --chat--color--primary-shade-50: #0891b2 !important;
+  --chat--color--primary--shade-100: #0e7490 !important;
   --chat--color--secondary: #2563eb !important;
-  --chat--color-white: #f1f5f9 !important;
-  --chat--color-typing: #94a3b8 !important;
-  
-  /* Tamaños - AQUÍ CONTROLAS LA ALTURA Y ANCHO DEL CHAT */
-  --chat--window--width: 400px !important; /* Ancho de la ventana del chat */
-  --chat--window--height: 600px !important; /* Altura de la ventana del chat */
-  --chat--toggle--size: 60px !important; /* Tamaño del círculo/botón flotante */
-  
-  /* Posición del círculo/botón flotante - AQUÍ LO MUEVES */
-  --chat--window--bottom: 1.8rem !important; /* Distancia desde abajo (eje Y) */
-  --chat--window--right: 1rem !important; /* Distancia desde la derecha (eje X) */
-  
-  /* Bordes redondeados */
-  --chat--window--border-radius: 20px !important;
-  --chat--message--border-radius: 18px !important;
-  --chat--border-radius: 16px !important; /* Input más redondeado */
-  
-  /* Header - Título más grande y bold */
-  --chat--heading--font-size: 1.5rem !important;
-  --chat--header--padding: 1.2rem !important;
-  
-  /* Header */
+  --chat--color-secondary-shade-50: #1d4ed8 !important;
   --chat--header--background: linear-gradient(135deg, #06b6d4 0%, #2563eb 50%, #4f46e5 100%) !important;
   --chat--header--color: #ffffff !important;
-  
-  /* Botón flotante */
   --chat--toggle--background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%) !important;
   --chat--toggle--hover--background: linear-gradient(135deg, #0891b2 0%, #1d4ed8 100%) !important;
-  
-  /* Fondos */
   --chat--body--background: rgba(15, 23, 42, 0.95) !important;
   --chat--footer--background: rgba(30, 41, 59, 0.9) !important;
   --chat--footer--color: #e2e8f0 !important;
-  
-  /* Mensajes del bot - MÁS CLARO Y MEJOR CONTRASTE */
-  --chat--message--bot--background: rgba(51, 65, 85, 0.9) !important;
+  --chat--message--bot--background: rgba(30, 41, 59, 0.8) !important;
   --chat--message--bot--color: #f1f5f9 !important;
-  --chat--message--bot--border: 1px solid rgba(59, 130, 246, 0.4) !important;
-  
-  /* Mensajes del usuario */
+  --chat--message--bot--border: 1px solid rgba(59, 130, 246, 0.2) !important;
   --chat--message--user--background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%) !important;
   --chat--message--user--color: #ffffff !important;
-  
-  /* Input */
   --chat--input--background: rgba(30, 41, 59, 0.6) !important;
   --chat--input--border: 1px solid rgba(59, 130, 246, 0.3) !important;
-  --chat--input--border-radius: 16px !important; /* Input muy redondeado */
   --chat--input--text-color: #f1f5f9 !important;
+  --chat--color-light: #1e293b !important;
+  --chat--color-dark: #f1f5f9 !important;
+  --chat--color-white: #f1f5f9 !important;
+  --chat--color-typing: #94a3b8 !important;
+  --chat--window--border-radius: 20px !important;
+  --chat--message--border-radius: 16px !important;
+  --chat--border-radius: 12px !important;
   --chat--input--send--button--color: #06b6d4 !important;
-  --chat--input--send--button--background: rgba(6, 182, 212, 0.15) !important;
+  --chat--input--send--button--background: rgba(6, 182, 212, 0.1) !important;
   --chat--input--send--button--color-hover: #ffffff !important;
   --chat--input--send--button--background-hover: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%) !important;
-  
-  /* Borde de la ventana */
   --chat--window--border: 1px solid rgba(59, 130, 246, 0.3) !important;
-  
-  /* Animaciones */
-  --chat--transition-duration: 0.3s !important;
 }
 
-/* Sombras y efectos */
+/* Estilos adicionales para mejorar el UI */
 .chat-window-wrapper .chat-window {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 50px rgba(6, 182, 212, 0.2) !important;
   backdrop-filter: blur(20px) !important;
@@ -76,92 +47,68 @@ html {
 
 .chat-window-wrapper .chat-window-toggle {
   box-shadow: 0 8px 24px rgba(6, 182, 212, 0.6), 0 0 40px rgba(37, 99, 235, 0.4) !important;
-  position: relative !important;
-  overflow: visible !important;
-}
-
-/* Tooltip/Popup del bot */
-.chat-window-wrapper .chat-window-toggle::before {
-  content: "👋 ¡Hola! Soy JarBot\A¿Necesitas información?";
-  white-space: pre-wrap;
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 15px;
-  background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  /* animation: pulseTooltip 10s ease-in-out 2s infinite; */
-  max-width: 180px;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.chat-window-wrapper .chat-window-toggle::after {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 7px;
-  border: 8px solid transparent;
-  border-left-color: #06b6d4;
-  opacity: 0;
-  pointer-events: none;
-  animation: pulseTooltip 3s ease-in-out 2s infinite;
-}
-
-@keyframes pulseTooltip {
-  0%, 100% {
-    opacity: 0;
-    transform: translateY(-50%) translateX(-5px);
-  }
-  10%, 90% {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
-  }
-}
-
-/* Cambiar ícono del botón por un robot emoji */
-.chat-window-wrapper .chat-window-toggle svg {
-  display: none !important;
-}
-
-.chat-window-wrapper .chat-window-toggle::after {
-  content: "🤖" !important;
-  position: static !important;
-  font-size: 2rem !important;
-  opacity: 1 !important;
-  border: none !important;
-  margin: 0 !important;
-  transform: none !important;
-  animation: none !important;
 }
 
 .chat-window-wrapper .chat-window-toggle:hover {
   box-shadow: 0 12px 32px rgba(6, 182, 212, 0.8), 0 0 60px rgba(37, 99, 235, 0.6) !important;
 }
 
-/* Texto visible en mensajes */
+/* Icono de enviar más visible */
+.chat-input-send-button svg {
+  filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.5));
+}
+
+.chat-input-send-button:hover svg {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+/* Mensajes más redondeados y con sombra */
+.chat-message {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.chat-message.chat-message-from-user {
+  box-shadow: 0 2px 12px rgba(6, 182, 212, 0.4) !important;
+}
+
+/* FORZAR texto visible en TODOS los mensajes */
 .chat-message.chat-message-from-bot,
-.chat-message.chat-message-from-bot * {
+.chat-message.chat-message-from-bot *,
+.chat-message.chat-message-from-bot p,
+.chat-message.chat-message-from-bot span,
+.chat-message.chat-message-from-bot div {
   color: #f1f5f9 !important;
 }
 
 .chat-message.chat-message-from-user,
-.chat-message.chat-message-from-user * {
+.chat-message.chat-message-from-user *,
+.chat-message.chat-message-from-user p,
+.chat-message.chat-message-from-user span,
+.chat-message.chat-message-from-user div {
   color: #ffffff !important;
 }
 
-/* Input */
+.chat-message-markdown,
+.chat-message-markdown *,
+.chat-message-markdown p,
+.chat-message-markdown span,
+.chat-message-markdown div,
+.chat-message-markdown h1,
+.chat-message-markdown h2,
+.chat-message-markdown h3,
+.chat-message-markdown h4,
+.chat-message-markdown h5,
+.chat-message-markdown h6,
+.chat-message-markdown a,
+.chat-message-markdown li,
+.chat-message-markdown ul,
+.chat-message-markdown ol {
+  color: inherit !important;
+}
+
+/* Input con mejor contraste */
 .chat-inputs textarea {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3) !important;
   color: #f1f5f9 !important;
 }
 
@@ -170,82 +117,19 @@ html {
   opacity: 1 !important;
 }
 
-/* Header */
+.chat-inputs textarea:focus {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(6, 182, 212, 0.4) !important;
+}
+
+/* Header más elegante */
+.chat-layout .chat-header {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.chat-layout .chat-header h1,
+.chat-layout .chat-header p,
 .chat-layout .chat-header * {
   color: #ffffff !important;
-}
-
-.chat-layout .chat-header h1 {
-  font-weight: 700 !important;
-  font-size: 1.5rem !important;
-  letter-spacing: -0.02em !important;
-}
-
-.chat-layout .chat-header p {
-  font-size: 0.95rem !important;
-  opacity: 0.95 !important;
-}
-
-/* Mensajes con animación de entrada */
-.chat-message {
-  animation: slideIn 0.3s ease-out !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
-  transition: all 0.2s ease !important;
-}
-
-.chat-message:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Botón de enviar más visible */
-.chat-input-send-button {
-  border-radius: 50% !important;
-  transition: all 0.2s ease !important;
-}
-
-.chat-input-send-button:hover {
-  transform: scale(1.1) !important;
-  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.5) !important;
-}
-
-.chat-input-send-button svg {
-  filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.6)) !important;
-}
-
-.chat-input-send-button:hover svg {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)) !important;
-}
-
-/* Typing indicator mejorado */
-.chat-message-typing {
-  animation: pulse 1.5s ease-in-out infinite !important;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Input redondeado */
-.chat-inputs {
-  border-radius: 16px !important;
-  overflow: hidden !important;
 }
 
 
