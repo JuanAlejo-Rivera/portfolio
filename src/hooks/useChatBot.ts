@@ -16,16 +16,16 @@ export const useChatBot = () => {
             showWelcomeScreen: true,
             defaultLanguage: 'en',
             initialMessages: [
-                '¡Hola! 👋 Soy un asistente IA de Juan Rivera.',
-                'Pregúntame sobre sus proyectos, tech stack o experiencia.'
+                '¡Hola! 👋 Soy JarBot, el asistente virtual de Juan 😁',
+                'Pregúntame sobre sus proyectos, tecnologías, experiencia o lo que quieras saber.'
             ],
             i18n: {
                 en: {
-                    title: 'Chat del Portafolio',
-                    subtitle: '¿Tienes alguna pregunta?',
+                    title: '🤖 JarBot - Asistente IA',
+                    subtitle: 'Tu asistente virtual del portafolio',
                     footer: '',
-                    getStarted: 'Comenzar conversación',
-                    inputPlaceholder: 'Escribe tu mensaje...',
+                    getStarted: '🚀 Comenzar conversación',
+                    inputPlaceholder: '💭 Pregúntame lo que quieras...',
                     closeButtonTooltip: 'Cerrar chat',
                 },
             },
