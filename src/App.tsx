@@ -72,7 +72,7 @@ export default function Portfolio() {
       {showArrow && (
         <button
           onClick={handleScrollTop}
-          className="fixed bottom-4.5 right-30 z-50 p-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 text-white shadow-2xl hover:shadow-cyan-500/50 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+          className="fixed bottom-4.5 right-30 z-70 p-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 text-white shadow-2xl hover:shadow-cyan-500/50 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
           aria-label="Volver arriba"
         >
           <ArrowBigUp size={24} />
@@ -82,7 +82,7 @@ export default function Portfolio() {
         href="https://wa.me/573185754076"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4.5 left-8 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl p-4 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-green-500/50 focus:outline-none focus:ring-4 focus:ring-green-400/50"
+        className="fixed bottom-4.5 left-5 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl p-4 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-green-500/50 focus:outline-none focus:ring-4 focus:ring-green-400/50"
         aria-label="Contactar por WhatsApp"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
