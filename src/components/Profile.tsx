@@ -84,11 +84,11 @@ export default function Profile() {
         <animated.div style={fadeInUp} className="text-center mb-12">
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-slate-300 mb-2">
             <span className="font-mono text-cyan-400">[</span>
-            <Typewriter words={[t('profile.role')]} cursor cursorStyle="_" typeSpeed={40} deleteSpeed={50} delaySpeed={5000} loop />
+            <Typewriter words={[t('profile.role')]} cursor cursorStyle="_" typeSpeed={40} deleteSpeed={50} delaySpeed={7000} loop />
             <span className="font-mono text-cyan-400">]</span>
           </p>
           <p className="text-base md:text-lg text-slate-400 font-mono">
-            <Typewriter words={[t('profile.passion')]} cursor cursorStyle="_" typeSpeed={20} deleteSpeed={30} delaySpeed={5000} loop />
+            <Typewriter words={[t('profile.passion')]} cursor cursorStyle="_" typeSpeed={20} deleteSpeed={30} delaySpeed={7000} loop />
           </p>
         </animated.div>
 

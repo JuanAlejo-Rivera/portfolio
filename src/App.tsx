@@ -11,6 +11,7 @@ import SnowfallEffect from "./components/SnowfallEffect";
 import { useIsDecember } from "./hooks/useIsDecember";
 import { useChatBot } from "./hooks/useChatBot";
 import { useTranslation } from 'react-i18next';
+import LanguageToggle from "./components/LanguageToggle";
 
 type ModalData = {
   titleKey: string
@@ -58,6 +59,12 @@ export default function Portfolio() {
     <div className="relative min-h-screen w-full bg-slate-900">
       {/* Efecto de nieve - Se activa automáticamente en diciembre */}
       <SnowfallEffect enabled={isDecember} snowflakeCount={150} />
+      
+      {/* Botón de cambio de idioma en la esquina superior derecha */}
+      <div className="fixed top-6 right-6 z-50">
+        <LanguageToggle />
+      </div>
+      
       <Profile />
       <section id="about-me" className="py-10">
         <AboutMe />

@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import LanguageToggle from './LanguageToggle';
 
 export default function NavBar() {
     const { t } = useTranslation();
@@ -27,7 +26,6 @@ export default function NavBar() {
                     <span className="relative z-10 drop-shadow-[0_1px_8px_rgba(34,211,238,0.5)]">{t(labelKey)}</span>
                 </a>
             ))}
-            <LanguageToggle />
         </nav>
     )
 }
