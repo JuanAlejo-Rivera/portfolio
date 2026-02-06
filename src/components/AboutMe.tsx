@@ -1,81 +1,20 @@
 import { GraduationCap, BookOpen, Briefcase, Code2, Rocket, Heart } from "lucide-react";
 import { useTrail, animated } from "@react-spring/web";
+import { useTranslation } from 'react-i18next';
 
 export default function AboutMe() {
-    const cards = [
-        {
-            icon: <GraduationCap className="w-6 h-6" />,
-            title: "Formación",
-            text: (
-                <>
-                    Estudiante de <span className="font-semibold">Tecnología en Desarrollo de Software </span>
-                    con ciclo propedéutico a Ingeniería de Sistemas.
-                    Además, <span className="font-semibold">Tecnólogo en Electrónica</span> y
-                    <span className="font-semibold"> Técnico en Mecatrónica</span>.
-                </>
-            ),
-        },
-        {
-            icon: <BookOpen className="w-6 h-6" />,
-            title: "Cursos y certificaciones",
-            text: (
-                <>
-                    Formación en <span className="font-semibold">JavaScript Moderno</span>,
-                    <span className="font-semibold"> React de cero a experto</span> y
-                    actualmente <span className="font-semibold">React con TypeScript (2025)</span>.
-                    Siempre en constante actualización.
-                </>
-            ),
-        },
-        {
-            icon: <Briefcase className="w-6 h-6" />,
-            title: "Experiencia",
-            text: (
-                <>
-                    +3 años como programador en <span className="font-semibold">Talent.com</span>,
-                    desarrollando soluciones de <span className="font-semibold">web scraping</span> y automatización.
-                    Proyectos personales destacados: <span className="font-semibold">e-commerce</span>,
-                    <span className="font-semibold"> buscador de recetas</span> y
-                    <span className="font-semibold"> gestor de proyectos</span>, 
-                    <span className="font-semibold"> plataforma de capacitación laboral</span>, entre otros.
-                </>
-            ),
-        },
-        {
-            icon: <Code2 className="w-6 h-6" />,
-            title: "Habilidades",
-            text: (
-                <>
-                    JavaScript, TypeScript, React, Node.js, Express, TailwindCSS, MUI, Redux Toolkit.
-                    Control de versiones con <span className="font-semibold">Git/GitHub</span>, entre otros.
-                    Aprendizaje ágil de nuevas herramientas.
-                </>
-            ),
-        },
-        {
-            icon: <Rocket className="w-6 h-6" />,
-            title: "Objetivo profesional",
-            text: (
-                <>
-                    Mi objetivo es aportar valor real en proyectos, crecer junto a equipos dinámicos
-                    y seguir desarrollándome profesionalmente dentro del mundo del software.
-                </>
-            ),
-        },
-        {
-            icon: <Heart className="w-6 h-6" />,
-            title: "Más allá del código",
-            text: (
-                <>
-                    Apasionado por aprender y explorar nuevas áreas.
-                    Disfruto pasar tiempo con familia y amigos, descubrir comidas y lugares,
-                    y practicar deportes como correr y senderismo.
-                </>
-            ),
-        },
+    const { t } = useTranslation();
+
+    const cardKeys = [
+        { icon: <GraduationCap className="w-6 h-6" />, key: "education" },
+        { icon: <BookOpen className="w-6 h-6" />, key: "courses" },
+        { icon: <Briefcase className="w-6 h-6" />, key: "experience" },
+        { icon: <Code2 className="w-6 h-6" />, key: "skills" },
+        { icon: <Rocket className="w-6 h-6" />, key: "objective" },
+        { icon: <Heart className="w-6 h-6" />, key: "beyond" },
     ];
 
-    const trail = useTrail(cards.length, {
+    const trail = useTrail(cardKeys.length, {
         from: { opacity: 0, y: 30 },
         to: { opacity: 1, y: 0 },
         config: { tension: 170, friction: 20 },
@@ -85,7 +24,7 @@ export default function AboutMe() {
         <section className="mb-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <h2 className="text-4xl sm:text-5xl font-black text-center mb-12 bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
-                Sobre mí
+                {t('about.title')}
             </h2>
 
 
@@ -101,11 +40,14 @@ export default function AboutMe() {
                     >
 
                         <h3 className="flex items-center gap-3 text-xl lg:text-2xl font-bold text-cyan-400 mb-4 group-hover:text-cyan-300 transition-colors">
-                            <span className="text-3xl">{cards[i].icon}</span>
-                            {cards[i].title}
+                            <span className="text-3xl">{cardKeys[i].icon}</span>
+                            {t(`about.cards.${cardKeys[i].key}.title`)}
                         </h3>
 
-                        <p className="text-slate-300 leading-relaxed text-base lg:text-lg">{cards[i].text}</p>
+                        <p 
+                            className="text-slate-300 leading-relaxed text-base lg:text-lg"
+                            dangerouslySetInnerHTML={{ __html: t(`about.cards.${cardKeys[i].key}.text`) }}
+                        />
                     </animated.div>
                 ))}
             </div>

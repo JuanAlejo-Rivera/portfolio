@@ -10,11 +10,15 @@ import {
   SiCloudinary,
   SiJest,
   SiExpress,
+  SiN8N,
 } from "react-icons/si";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
+import { useTranslation } from 'react-i18next';
 
 export default function Skills() {
+  const { t } = useTranslation();
+
   const frontend = [
     { name: "React", icon: <FaReact className="text-2xl" /> },
     { name: "TypeScript", icon: <SiTypescript className="text-2xl" /> },
@@ -46,6 +50,7 @@ export default function Skills() {
     ],
     testing: [{ name: "Jest", icon: <SiJest className="text-2xl" /> }],
     version: [{ name: "Git & GitHub", icon: <FaGitAlt className="text-2xl" /> }],
+    automation: [{ name: "n8n", icon: <SiN8N className="text-2xl" color="#E3496D" /> }],
   };
 
 
@@ -75,7 +80,7 @@ export default function Skills() {
           <div className="relative z-10">
             <h3 className="text-3xl font-black mb-8 text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text flex items-center justify-center gap-3">
               <span className="text-4xl">⚡</span>
-              Frontend
+              {t('skills.frontend')}
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {frontend.map((skill) => (
@@ -99,7 +104,7 @@ export default function Skills() {
           <div className="relative z-10">
             <h3 className="text-3xl font-black mb-8 text-transparent bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text flex items-center justify-center gap-3">
               <span className="text-4xl">🔧</span>
-              Backend
+              {t('skills.backend')}
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {backend.map((skill) => (
@@ -120,11 +125,11 @@ export default function Skills() {
         <div className="backdrop-blur-xl bg-slate-900/30 border border-purple-500/20 rounded-3xl p-8 md:p-12">
           <h3 className="text-3xl font-black mb-12 text-transparent bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text flex items-center justify-center gap-3">
             <span className="text-4xl">🛠️</span>
-            Herramientas
+            {t('skills.tools')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <p className="text-cyan-400 font-bold mb-4 text-sm uppercase tracking-wider">Build & Deploy</p>
+              <p className="text-cyan-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.buildDeploy')}</p>
               <div className="flex flex-wrap gap-2">
                 {tools.build.map((skill) => (
                   <span key={skill.name} className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 cursor-default flex items-center gap-2">
@@ -134,7 +139,7 @@ export default function Skills() {
               </div>
             </div>
             <div>
-              <p className="text-indigo-400 font-bold mb-4 text-sm uppercase tracking-wider">Testing</p>
+              <p className="text-indigo-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.testing')}</p>
               <div className="flex flex-wrap gap-2">
                 {tools.testing.map((skill) => (
                   <span key={skill.name} className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-indigo-400 hover:bg-indigo-500/10 transition-all duration-300 cursor-default flex items-center gap-2">
@@ -144,9 +149,19 @@ export default function Skills() {
               </div>
             </div>
             <div>
-              <p className="text-purple-400 font-bold mb-4 text-sm uppercase tracking-wider">Versionado</p>
+              <p className="text-purple-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.versioning')}</p>
               <div className="flex flex-wrap gap-2">
                 {tools.version.map((skill) => (
+                  <span key={skill.name} className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-300 cursor-default flex items-center gap-2">
+                    {skill.icon} {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-purple-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.automation')}</p>
+              <div className="flex flex-wrap gap-2">
+                {tools.automation.map((skill) => (
                   <span key={skill.name} className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-300 cursor-default flex items-center gap-2">
                     {skill.icon} {skill.name}
                   </span>

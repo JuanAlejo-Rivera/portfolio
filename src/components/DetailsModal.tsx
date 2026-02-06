@@ -3,16 +3,17 @@ import { Fragment } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
+import { useTranslation } from 'react-i18next';
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 type DetailsModalProps = {
     data?: {
-        title: string
-        description: string
+        titleKey: string
+        descriptionKey: string
         images: string[]
-        fulldescription: string
+        fulldescriptionKey: string
     }
 }
 
@@ -20,6 +21,7 @@ type DetailsModalProps = {
 export default function DetailsModal({ data }: DetailsModalProps) {
     const navigate = useNavigate();
     const location = useLocation();
+    const { t } = useTranslation();
     const queryParams = new URLSearchParams(location.search);
     const modalTask = queryParams.get("details");
     const show = modalTask ? true : false;
@@ -57,13 +59,13 @@ export default function DetailsModal({ data }: DetailsModalProps) {
                                 <DialogPanel className="max-w-4xl w-full h-auto transform overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 p-8 text-left shadow-2xl border-2 border-cyan-500/30 backdrop-blur-xl transition-all">
                                     <div className="relative mb-6">
                                         <DialogTitle className="text-3xl md:text-4xl font-black text-transparent bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text mb-4 drop-shadow-lg">
-                                            {data?.title}
+                                            {data?.titleKey && t(data.titleKey)}
                                         </DialogTitle>
                                         <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/50" />
                                     </div>
                                     
                                     <p className="text-slate-300 leading-relaxed text-base md:text-lg mb-8">
-                                        {data?.fulldescription}
+                                        {data?.fulldescriptionKey && t(data.fulldescriptionKey)}
                                     </p>
                                     
                                     {data?.images && data.images.length > 0 && (
@@ -80,7 +82,7 @@ export default function DetailsModal({ data }: DetailsModalProps) {
                                                         <div className="flex items-center justify-center min-h-[50vh] md:min-h-[60vh] w-full p-4">
                                                             <img
                                                                 src={img}
-                                                                alt={`${data?.title ?? "proyecto"} captura ${idx + 1}`}
+                                                                alt={`${data?.titleKey ? t(data.titleKey) : "proyecto"} captura ${idx + 1}`}
                                                                 className="w-full max-h-[55vh] md:max-h-[65vh] object-contain rounded-xl shadow-2xl"
                                                             />
                                                         </div>
@@ -95,7 +97,7 @@ export default function DetailsModal({ data }: DetailsModalProps) {
                                         className="mt-4 px-8 py-3 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
                                         onClick={() => navigate(location.pathname, { replace: true })}
                                     >
-                                        ✕ Cerrar
+                                        {t('projects.close')}
                                     </button>
                                 </DialogPanel>
 

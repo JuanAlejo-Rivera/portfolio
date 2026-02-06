@@ -1,14 +1,18 @@
+import { useTranslation } from 'react-i18next';
+
 export default function ContactMe() {
+    const { t } = useTranslation();
+
     return (
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-center">
             
             <h2 className="text-4xl sm:text-5xl font-black mb-8 bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
-                Contacto
+                {t('contact.title')}
             </h2>
             
             
             <p className="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                ¿Quieres contactar conmigo? Escríbeme a{" "}
+                {t('contact.description')}{" "}
                 <a 
                     href="mailto:juan.alejorivera25@gmail.com" 
                     className="text-cyan-400 font-bold hover:text-cyan-300 underline decoration-2 underline-offset-4 transition-colors"
@@ -25,7 +29,7 @@ export default function ContactMe() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-slate-700 to-slate-900 border-2 border-slate-600 hover:border-cyan-400 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-110"
-                    aria-label="Visitar mi perfil de GitHub"
+                    aria-label={t('contact.github')}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +49,7 @@ export default function ContactMe() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 border-2 border-blue-500 hover:border-cyan-400 shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110"
-                    aria-label="Visitar mi perfil de LinkedIn"
+                    aria-label={t('contact.linkedin')}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +67,7 @@ export default function ContactMe() {
                 <a
                     href="mailto:juan.alejorivera25@gmail.com"
                     className="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-cyan-600 to-indigo-700 border-2 border-cyan-500 hover:border-cyan-300 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-110"
-                    aria-label="Enviarme un correo electrónico"
+                    aria-label={t('contact.email')}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

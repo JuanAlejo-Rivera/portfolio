@@ -3,9 +3,11 @@ import NavBar from './NavBar';
 import { Typewriter } from 'react-simple-typewriter';
 import { fireworkConfetti } from "./fireworkConfetti";
 import { useIsDecember } from "../hooks/useIsDecember";
+import { useTranslation } from 'react-i18next';
 
 export default function Profile() {
   const isDecember = useIsDecember();
+  const { t } = useTranslation();
   
   const fadeInUp = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
@@ -60,7 +62,7 @@ export default function Profile() {
         <animated.div style={fadeInUp} className="text-center mt-16 mb-8">
           <div className="block relative w-full max-w-4xl px-4 mx-auto">
             <span className="block text-cyan-400 text-sm md:text-base font-mono mb-4 tracking-[0.3em] uppercase">
-              <Typewriter words={["< Hola, soy />"]} cursor cursorStyle="_" typeSpeed={60} deleteSpeed={70} delaySpeed={10000} loop />
+              <Typewriter words={[t('profile.greeting')]} cursor cursorStyle="_" typeSpeed={60} deleteSpeed={70} delaySpeed={5000} loop />
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 leading-[1.25] sm:leading-[1.2] md:leading-[1.15] lg:leading-[1.12] overflow-visible py-4">
               <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent pb-1">
@@ -82,11 +84,11 @@ export default function Profile() {
         <animated.div style={fadeInUp} className="text-center mb-12">
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-slate-300 mb-2">
             <span className="font-mono text-cyan-400">[</span>
-            <Typewriter words={["Desarrollador Web Fullstack"]} cursor cursorStyle="_" typeSpeed={40} deleteSpeed={50} delaySpeed={10000} loop />
+            <Typewriter words={[t('profile.role')]} cursor cursorStyle="_" typeSpeed={40} deleteSpeed={50} delaySpeed={5000} loop />
             <span className="font-mono text-cyan-400">]</span>
           </p>
           <p className="text-base md:text-lg text-slate-400 font-mono">
-            <Typewriter words={["// Apasionado por crear experiencias digitales innovadoras"]} cursor cursorStyle="_" typeSpeed={20} deleteSpeed={30} delaySpeed={10000} loop />
+            <Typewriter words={[t('profile.passion')]} cursor cursorStyle="_" typeSpeed={20} deleteSpeed={30} delaySpeed={5000} loop />
           </p>
         </animated.div>
 
@@ -95,7 +97,7 @@ export default function Profile() {
             href="/doc/Juan-Rivera-CV.pdf"
             download={"Juan_Rivera_CV.pdf"}
             className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-cyan-400/30 hover:border-cyan-400/70 shadow-[0_0_16px_2px_#22d3ee55,0_0_0_2px_#fff2_inset] hover:shadow-[0_0_32px_8px_rgba(34,211,238,0.45)] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/30 overflow-hidden" 
-            aria-label="Descargar mi currículum vitae"
+            aria-label={t('ariaLabels.downloadCV')}
             onClick={fireworkConfetti}
           >
             <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 opacity-40 group-hover:opacity-60 blur-sm animate-gradient-x z-0 transition-all duration-500" />
@@ -103,7 +105,7 @@ export default function Profile() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
             </svg>
             <span className="relative z-10 font-bold text-lg text-white drop-shadow-[0_1px_6px_rgba(34,211,238,0.7)] tracking-wide select-none">
-              Descargar CV
+              {t('profile.downloadCV')}
             </span>
             <span className="absolute inset-0 rounded-2xl border-2 border-white/10 group-hover:border-cyan-300/40 pointer-events-none z-20 transition-all duration-300" />
           </a>
