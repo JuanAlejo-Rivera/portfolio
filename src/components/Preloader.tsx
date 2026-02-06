@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
@@ -9,7 +10,11 @@ export default function Preloader() {
     return () => clearTimeout(timer);
   }, []);
 
+  const { t } = useTranslation();
+
+
   return (
+
     <AnimatePresence>
       {loading && (
         <motion.div
@@ -32,7 +37,7 @@ export default function Preloader() {
               backgroundSize: '200% 200%',
             }}
           />
-          
+
 
           <motion.div className="relative z-10">
             <motion.h1
@@ -44,7 +49,7 @@ export default function Preloader() {
               <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-2xl">
                 Juan Alejandro Rivera
               </span>
-              
+
               <motion.span
                 className="absolute inset-0 blur-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-30"
                 animate={{
@@ -85,9 +90,9 @@ export default function Preloader() {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-xl md:text-3xl tracking-[0.4em] font-light text-slate-300 uppercase"
           >
-            Portafolio
+            {t('preload.portafolio')}
           </motion.h2>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: [0.3, 0.6, 0.3] }}
