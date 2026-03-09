@@ -6,7 +6,7 @@ export default function Preloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1800);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -19,7 +19,7 @@ export default function Preloader() {
       {loading && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 1.2, ease: "easeInOut" } }}
+          exit={{ opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } }}
           className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white z-50 overflow-hidden"
         >
           <motion.div
