@@ -36,7 +36,7 @@ export default function Portfolio() {
   const isDecember = useIsDecember();
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
+    const timer = setTimeout(() => setLoading(false), 0);
     return () => clearTimeout(timer);
   }, []);
 
