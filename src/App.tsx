@@ -12,7 +12,6 @@ import { useIsDecember } from "./hooks/useIsDecember";
 import { useChatBot } from "./hooks/useChatBot";
 import { useTranslation } from 'react-i18next';
 import LanguageToggle from "./components/LanguageToggle";
-import CustomCursor from "./components/CustomCursor";
 import FloatingShapes from "./components/FloatingShapes";
 
 type ModalData = {
@@ -59,9 +58,6 @@ export default function Portfolio() {
 
   return (
     <div className="relative min-h-screen w-full bg-slate-900">
-      {/* Cursor personalizado */}
-      <CustomCursor />
-      
       {/* Formas flotantes animadas */}
       <FloatingShapes />
       

@@ -11,6 +11,8 @@ import {
   SiJest,
   SiExpress,
   SiN8N,
+  SiPostgresql,
+  SiCloudflare,
 } from "react-icons/si";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
@@ -38,6 +40,7 @@ export default function Skills() {
     { name: "Node.js", icon: <FaNodeJs className="text-2xl" /> },
     { name: "Express", icon: <SiExpress className="text-2xl" /> },
     { name: "MongoDB (Mongoose)", icon: <SiMongodb className="text-2xl" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-2xl" /> },
     { name: "JWT", icon: <SiJsonwebtokens className="text-2xl" /> },
     { name: "bcrypt", icon: <RiLockPasswordLine className="text-2xl" /> },
     { name: "express-validator", icon: <span className="text-2xl">📝</span> },
@@ -49,6 +52,7 @@ export default function Skills() {
       { name: "Vite", icon: <span className="text-2xl">⚡</span> },
       { name: "Firebase", icon: <SiFirebase className="text-2xl" /> },
       { name: "Cloudinary", icon: <SiCloudinary className="text-2xl" /> },
+      { name: "Cloudflare", icon: <SiCloudflare className="text-2xl" /> },
     ],
     testing: [{ name: "Jest", icon: <SiJest className="text-2xl" /> }],
     version: [{ name: "Git & GitHub", icon: <FaGitAlt className="text-2xl" /> }],
