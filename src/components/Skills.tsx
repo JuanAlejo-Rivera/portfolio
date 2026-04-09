@@ -59,7 +59,6 @@ export default function Skills() {
     automation: [{ name: "n8n", icon: <SiN8N className="text-2xl" color="#E3496D" /> }],
   };
 
-
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative overflow-hidden">
       <ParallaxSection speed={-0.2}>
