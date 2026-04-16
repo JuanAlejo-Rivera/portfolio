@@ -140,8 +140,8 @@ export default function Profile() {
 
         <animated.div style={fadeInUp} className="flex justify-center">
           <motion.a
-            href="/doc/Juan_Rivera_CV.pdf"
-            download={"Juan_Rivera_CV.pdf"}
+            href="/doc/Juan_Rivera_CV_ES.pdf"
+            download={"Juan_Rivera_CV_ES.pdf"}
             className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-cyan-400/30 hover:border-cyan-400/70 shadow-[0_0_16px_2px_#22d3ee55,0_0_0_2px_#fff2_inset] hover:shadow-[0_0_32px_8px_rgba(34,211,238,0.45)] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/30 overflow-hidden" 
             aria-label={t('ariaLabels.downloadCV')}
             onClick={fireworkConfetti}
