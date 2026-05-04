@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import projects from "../data/projects";
 import { CardLink } from "./CardLink";
@@ -18,6 +19,9 @@ type PropsCardProjects = {
 export default function CardProjects({ setModalData }: PropsCardProjects) {
     const navigate = useNavigate();
     const { t } = useTranslation();
+    const [activeTab, setActiveTab] = useState<'all' | 'featured'>('all');
+    const featuredProjects = projects.filter((project) => project.featured);
+    const visibleProjects = activeTab === 'featured' ? featuredProjects : projects;
 
     return (
         <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -36,10 +40,37 @@ export default function CardProjects({ setModalData }: PropsCardProjects) {
                 </h2>
                 <p className="text-slate-400 text-lg font-mono"></p>
             </div>
+
+            <div className="flex flex-wrap justify-center gap-3 mb-16 relative z-10">
+                <button
+                    type="button"
+                    onClick={() => setActiveTab('all')}
+                    aria-pressed={activeTab === 'all'}
+                    className={`px-5 py-2 rounded-full text-sm font-semibold transition border ${
+                        activeTab === 'all'
+                            ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-transparent shadow-lg shadow-cyan-500/30'
+                            : 'bg-slate-900/60 text-slate-300 border-slate-700/60 hover:border-cyan-400/60 hover:text-white'
+                    }`}
+                >
+                    {t('projects.tabs.all')}
+                </button>
+                <button
+                    type="button"
+                    onClick={() => setActiveTab('featured')}
+                    aria-pressed={activeTab === 'featured'}
+                    className={`px-5 py-2 rounded-full text-sm font-semibold transition border ${
+                        activeTab === 'featured'
+                            ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-transparent shadow-lg shadow-cyan-500/30'
+                            : 'bg-slate-900/60 text-slate-300 border-slate-700/60 hover:border-cyan-400/60 hover:text-white'
+                    }`}
+                >
+                    {t('projects.tabs.featured')}
+                </button>
+            </div>
             
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
-                {projects.map(
+                {visibleProjects.map(
                     (
                         { titleKey, descriptionKey, images, deploy, repository, backRepository, tecnologiasKey, fulldescriptionKey },
                         i

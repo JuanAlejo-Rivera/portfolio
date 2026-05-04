@@ -1,4 +1,5 @@
 type Project = {
+    slug: string;
     titleKey: string;
     descriptionKey: string;
     fulldescriptionKey: string;
@@ -7,12 +8,14 @@ type Project = {
     deploy: string;
     repository: string;
     backRepository?: string;
+    featured?: boolean;
 };
 
 
 
 const projects: Project[] = [
     {
+        slug: "skillup",
         titleKey: "projects.list.skillup.title",
         descriptionKey: "projects.list.skillup.description",
         fulldescriptionKey: "projects.list.skillup.fullDescription",
@@ -21,8 +24,10 @@ const projects: Project[] = [
         deploy: "https://skill-up-neon.vercel.app/auth/login",
         repository: "https://github.com/JuanAlejo-Rivera/SkillUp_front",
         backRepository: "https://github.com/JuanAlejo-Rivera/SkillUp_Backend",
+        featured: true,
     },
     {
+        slug: "coagenda",
         titleKey: "projects.list.coagenda.title",
         descriptionKey: "projects.list.coagenda.description",
         fulldescriptionKey: "projects.list.coagenda.fullDescription",
@@ -31,9 +36,11 @@ const projects: Project[] = [
         deploy: "https://co-agenda-frontend.vercel.app/",
         repository: "https://github.com/JuanAlejo-Rivera/CoAgenda_Frontend",
         backRepository: "https://github.com/JuanAlejo-Rivera/CoAgenda_Backend",
+        featured: true,
 
     },
     {
+        slug: "taskly",
         titleKey: "projects.list.taskly.title",
         descriptionKey: "projects.list.taskly.description",
         fulldescriptionKey: "projects.list.taskly.fullDescription",
@@ -42,9 +49,11 @@ const projects: Project[] = [
         deploy: "https://taskly-frontend-rosy-nu.vercel.app/auth/login",
         repository: "https://github.com/JuanAlejo-Rivera/TaskLy_Frontend",
         backRepository: "https://github.com/JuanAlejo-Rivera/TaskLy_backend",
+        featured: true,
 
     },
         {
+        slug: "jotter",
         titleKey: "projects.list.jotter.title",
         descriptionKey: "projects.list.jotter.description",
         fulldescriptionKey: "projects.list.jotter.fullDescription",
@@ -55,6 +64,7 @@ const projects: Project[] = [
 
     },
     {
+        slug: "gamercore",
         titleKey: "projects.list.gamercore.title",
         descriptionKey: "projects.list.gamercore.description",
         fulldescriptionKey: "projects.list.gamercore.fullDescription",
@@ -64,6 +74,7 @@ const projects: Project[] = [
         repository: "https://github.com/JuanAlejo-Rivera/Gamer-Core-ecommerce",
     },
     {
+        slug: "drinks",
         titleKey: "projects.list.drinks.title",
         descriptionKey: "projects.list.drinks.description",
         fulldescriptionKey: "projects.list.drinks.fullDescription",
@@ -75,6 +86,7 @@ const projects: Project[] = [
 
     },
     {
+        slug: "budget",
         titleKey: "projects.list.budget.title",
         descriptionKey: "projects.list.budget.description",
         fulldescriptionKey: "projects.list.budget.fullDescription",
@@ -85,6 +97,7 @@ const projects: Project[] = [
 
     },
     {
+        slug: "flowpilot",
         titleKey: "projects.list.flowpilot.title",
         descriptionKey: "projects.list.flowpilot.description",
         fulldescriptionKey: "projects.list.flowpilot.fullDescription",

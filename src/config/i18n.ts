@@ -49,6 +49,10 @@ const es = {
         title: "Proyectos",
         viewDetails: "Ver detalles →",
         close: "✕ Cerrar",
+        tabs: {
+            all: "Todos",
+            featured: "Destacados"
+        },
         links: {
             viewDemo: "🚀 Ver Demo",
             frontend: "💻 Frontend",
@@ -195,6 +199,10 @@ const en = {
         title: "Projects",
         viewDetails: "View details →",
         close: "✕ Close",
+        tabs: {
+            all: "All",
+            featured: "Featured"
+        },
         links: {
             viewDemo: "🚀 View Demo",
             frontend: "💻 Frontend",
