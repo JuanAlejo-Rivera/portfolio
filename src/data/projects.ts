@@ -89,9 +89,9 @@ const projects: Project[] = [
         descriptionKey: "projects.list.flowpilot.description",
         fulldescriptionKey: "projects.list.flowpilot.fullDescription",
         tecnologiasKey: "projects.list.flowpilot.tech",
-        images: ['img/flowpilot/main.png', 'img/flowpilot/features.png', 'img/flowpilot/mobile.png'],
+        images: ['img/flowpilot/1.jpg', 'img/flowpilot/2.jpg', 'img/flowpilot/3.jpg', 'img/flowpilot/4.jpg', 'img/flowpilot/5.jpg'],
         deploy: "https://flow-pilot-eight.vercel.app/",
-        repository: "https://github.com/JuanAlejo-Rivera/flow-pilot",
+        repository: "https://github.com/JuanAlejo-Rivera/FlowPilot",
     },
 
 

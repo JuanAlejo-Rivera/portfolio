@@ -102,8 +102,8 @@ const es = {
             },
             flowpilot: {
                 title: "Landing page, FlowPilot",
-                description: "Landing page dinámica para una plataforma de workspace con IA, diseñada para equipos de desarrollo.",
-                fullDescription: "FlowPilot es una landing page moderna y animada que presenta una plataforma de workspace potenciada por inteligencia artificial para equipos de desarrollo. Diseñada con foco en la experiencia del usuario, cuenta con secciones fluidas, microanimaciones, diseño completamente responsivo y una interfaz visualmente atractiva que comunica el valor del producto de forma clara e impactante.",
+                description: "Landing page dinámica para una plataforma de workspace con IA, diseñada para equipos de desarrollo, con modos de visualización por tema y soporte multilenguaje.",
+                fullDescription: "FlowPilot es una landing page moderna y animada que presenta una plataforma de workspace potenciada por inteligencia artificial para equipos de desarrollo. Diseñada con foco en la experiencia del usuario, incluye modos de visualización con distintos temas, soporte para múltiples idiomas, secciones fluidas, microanimaciones, diseño completamente responsivo y una interfaz visualmente atractiva que comunica el valor del producto de forma clara e impactante.",
                 tech: "🚀 Tecnologías: React, TypeScript, TailwindCSS, Framer Motion, Vite"
             }
         }
@@ -248,8 +248,8 @@ const en = {
             },
             flowpilot: {
                 title: "Landing page, FlowPilot",
-                description: "Dynamic landing page for an AI-powered workspace platform, designed for development teams.",
-                fullDescription: "FlowPilot is a modern, animated landing page showcasing an AI-powered workspace platform built for development teams. Designed with a strong focus on user experience, it features fluid sections, micro-animations, fully responsive layout and a visually compelling interface that communicates the product value clearly and effectively.",
+                description: "Dynamic landing page for an AI-powered workspace platform for development teams, featuring themed viewing modes and multi-language support.",
+                fullDescription: "FlowPilot is a modern, animated landing page showcasing an AI-powered workspace platform built for development teams. Designed with a strong focus on user experience, it includes themed viewing modes, multi-language support, fluid sections, micro-animations, a fully responsive layout, and a visually compelling interface that communicates the product value clearly and effectively.",
                 tech: "🚀 Technologies: React, TypeScript, TailwindCSS, Framer Motion, Vite"
             }
         }
