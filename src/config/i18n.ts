@@ -99,6 +99,12 @@ const es = {
                 description: "Aplicación para registrar ingresos y gastos, calcular presupuestos y mantener control financiero.",
                 fullDescription: "Aplicación enfocada en la planificación de finanzas personales, donde el usuario puede definir un presupuesto y gestionar sus gastos para mantener el control de su dinero. Incluye validación de datos, alertas dinámicas y diseño adaptable para dispositivos móviles y escritorio.",
                 tech: "🚀 Tecnologías: React, TypeScript, TailwindCSS, React Calendar, React Toastify, SweetAlert2"
+            },
+            flowpilot: {
+                title: "Landing page, FlowPilot",
+                description: "Landing page dinámica para una plataforma de workspace con IA, diseñada para equipos de desarrollo.",
+                fullDescription: "FlowPilot es una landing page moderna y animada que presenta una plataforma de workspace potenciada por inteligencia artificial para equipos de desarrollo. Diseñada con foco en la experiencia del usuario, cuenta con secciones fluidas, microanimaciones, diseño completamente responsivo y una interfaz visualmente atractiva que comunica el valor del producto de forma clara e impactante.",
+                tech: "🚀 Tecnologías: React, TypeScript, TailwindCSS, Framer Motion, Vite"
             }
         }
     },
@@ -239,6 +245,12 @@ const en = {
                 description: "Application to record income and expenses, calculate budgets and maintain financial control.",
                 fullDescription: "Application focused on personal finance planning, where the user can define a budget and manage their expenses to maintain control of their money. Includes data validation, dynamic alerts and responsive design for mobile and desktop devices.",
                 tech: "🚀 Technologies: React, TypeScript, TailwindCSS, React Calendar, React Toastify, SweetAlert2"
+            },
+            flowpilot: {
+                title: "Landing page, FlowPilot",
+                description: "Dynamic landing page for an AI-powered workspace platform, designed for development teams.",
+                fullDescription: "FlowPilot is a modern, animated landing page showcasing an AI-powered workspace platform built for development teams. Designed with a strong focus on user experience, it features fluid sections, micro-animations, fully responsive layout and a visually compelling interface that communicates the product value clearly and effectively.",
+                tech: "🚀 Technologies: React, TypeScript, TailwindCSS, Framer Motion, Vite"
             }
         }
     },

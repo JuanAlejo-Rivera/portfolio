@@ -84,6 +84,15 @@ const projects: Project[] = [
         repository: "https://github.com/JuanAlejo-Rivera/budget-controller",
 
     },
+    {
+        titleKey: "projects.list.flowpilot.title",
+        descriptionKey: "projects.list.flowpilot.description",
+        fulldescriptionKey: "projects.list.flowpilot.fullDescription",
+        tecnologiasKey: "projects.list.flowpilot.tech",
+        images: ['img/flowpilot/main.png', 'img/flowpilot/features.png', 'img/flowpilot/mobile.png'],
+        deploy: "https://flow-pilot-eight.vercel.app/",
+        repository: "https://github.com/JuanAlejo-Rivera/flow-pilot",
+    },
 
 
 ];
