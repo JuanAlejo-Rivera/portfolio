@@ -1,4 +1,7 @@
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { FaDocker, FaPython, FaAngular  } from "react-icons/fa";
+import { AiOutlineOpenAI } from "react-icons/ai";
+
 import {
   SiTypescript,
   SiRedux,
@@ -13,6 +16,11 @@ import {
   SiN8N,
   SiPostgresql,
   SiCloudflare,
+  SiRailway,
+  SiRender,
+  SiAnthropic,
+  SiOllama,
+  
 } from "react-icons/si";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
@@ -34,6 +42,8 @@ export default function Skills() {
     { name: "HeadlessUI", icon: <span className="text-2xl">🧩</span> },
     { name: "React Hook Form", icon: <span className="text-2xl">📋</span> },
     { name: "Zod", icon: <span className="text-2xl">✔️</span> },
+    { name: "Python", icon: <FaPython className="text-2xl" /> },
+    { name: "Angular", icon: <FaAngular className="text-2xl" /> },
   ];
 
   const backend = [
@@ -45,6 +55,9 @@ export default function Skills() {
     { name: "bcrypt", icon: <RiLockPasswordLine className="text-2xl" /> },
     { name: "express-validator", icon: <span className="text-2xl">📝</span> },
     { name: "Nodemailer", icon: <MdOutlineEmail className="text-2xl" /> },
+    { name: "SQL", icon: <span className="text-2xl">💾</span> },
+    { name: "REST API", icon: <span className="text-2xl">🌐</span> },
+    { name: "NoSQL", icon: <span className="text-2xl">🗄️</span> },
   ];
 
   const tools = {
@@ -53,11 +66,28 @@ export default function Skills() {
       { name: "Firebase", icon: <SiFirebase className="text-2xl" /> },
       { name: "Cloudinary", icon: <SiCloudinary className="text-2xl" /> },
       { name: "Cloudflare", icon: <SiCloudflare className="text-2xl" /> },
+      { name: "Railway", icon: <SiRailway className="text-2xl" /> },
+      { name: "Render", icon: <SiRender className="text-2xl" /> },
+      { name: "Docker", icon: <FaDocker className="text-2xl" /> },
     ],
-    testing: [{ name: "Jest", icon: <SiJest className="text-2xl" /> }],
+    testing: [
+      { name: "Jest", icon: <SiJest className="text-2xl" /> },
+      { name: "React Testing Library", icon: <span className="text-2xl">🧪</span> },
+      { name: "playwright", icon: <span className="text-2xl">🎭</span> }
+    ],
     version: [{ name: "Git & GitHub", icon: <FaGitAlt className="text-2xl" /> }],
     automation: [{ name: "n8n", icon: <SiN8N className="text-2xl" color="#E3496D" /> }],
+    ai: [
+      { name: "OpenAI", icon: <AiOutlineOpenAI className="text-2xl" /> },
+      { name: "RAG", icon: <span className="text-2xl">📚</span> },
+      { name: "Anthropic", icon: <SiAnthropic className="text-2xl" /> },
+      { name: "Ollama", icon: <SiOllama className="text-2xl" /> },
+      { name: "MCP", icon: <span className="text-2xl">🤖</span> }
+    ]
   };
+
+  const toolChipClass =
+    "group relative px-5 py-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl text-white transition-all duration-300 cursor-default flex items-center gap-2";
 
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative overflow-hidden">
@@ -65,9 +95,9 @@ export default function Skills() {
         <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl" />
       </ParallaxSection>
-      
+
       <div className="relative z-10 mb-20">
-        <motion.span 
+        <motion.span
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -75,7 +105,7 @@ export default function Skills() {
         >
           &lt;skills /&gt;
         </motion.span>
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -87,23 +117,23 @@ export default function Skills() {
           </span>
         </motion.h2>
         <div className="flex justify-center gap-2 mt-4">
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" 
+            className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
           />
-          <motion.div 
+          <motion.div
             animate={{ scale: [1, 1.5, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-1 bg-cyan-400 rounded-full" 
+            className="w-1 h-1 bg-cyan-400 rounded-full"
           />
         </div>
       </div>
 
       <div className="relative z-10 space-y-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -124,15 +154,15 @@ export default function Skills() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  whileHover={{ 
-                    scale: 1.1, 
+                  whileHover={{
+                    scale: 1.1,
                     rotate: [0, -5, 5, 0],
                     transition: { duration: 0.3 }
                   }}
                   className="group relative px-5 py-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl text-white transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 cursor-default"
                 >
                   <span className="flex items-center gap-2">
-                    <motion.span 
+                    <motion.span
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                       className="text-2xl"
@@ -148,7 +178,7 @@ export default function Skills() {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -169,7 +199,7 @@ export default function Skills() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.1,
                     rotate: [0, 5, -5, 0],
                     transition: { duration: 0.3 }
@@ -177,7 +207,7 @@ export default function Skills() {
                   className="group relative px-5 py-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl text-white transition-all duration-300 hover:border-indigo-400 hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 cursor-default"
                 >
                   <span className="flex items-center gap-2">
-                    <motion.span 
+                    <motion.span
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                       className="text-2xl"
@@ -192,7 +222,7 @@ export default function Skills() {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -203,7 +233,7 @@ export default function Skills() {
             <span className="text-4xl">🛠️</span>
             {t('skills.tools')}
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -211,14 +241,25 @@ export default function Skills() {
               transition={{ duration: 0.5 }}
             >
               <p className="text-cyan-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.buildDeploy')}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-start gap-3">
                 {tools.build.map((skill) => (
-                  <motion.span 
-                    key={skill.name} 
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 cursor-default flex items-center gap-2"
+                  <motion.span
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: [0, -4, 4, 0],
+                      transition: { duration: 0.3 }
+                    }}
+                    className={`${toolChipClass} hover:border-cyan-400 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20`}
                   >
-                    {skill.icon} {skill.name}
+                    <motion.span whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }} className="text-2xl">
+                      {skill.icon}
+                    </motion.span>
+                    <span className="font-semibold text-sm">{skill.name}</span>
                   </motion.span>
                 ))}
               </div>
@@ -230,14 +271,25 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <p className="text-indigo-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.testing')}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-start gap-3">
                 {tools.testing.map((skill) => (
-                  <motion.span 
-                    key={skill.name} 
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-indigo-400 hover:bg-indigo-500/10 transition-all duration-300 cursor-default flex items-center gap-2"
+                  <motion.span
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: [0, 4, -4, 0],
+                      transition: { duration: 0.3 }
+                    }}
+                    className={`${toolChipClass} hover:border-indigo-400 hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20`}
                   >
-                    {skill.icon} {skill.name}
+                    <motion.span whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }} className="text-2xl">
+                      {skill.icon}
+                    </motion.span>
+                    <span className="font-semibold text-sm">{skill.name}</span>
                   </motion.span>
                 ))}
               </div>
@@ -249,14 +301,25 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-purple-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.versioning')}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-start gap-3">
                 {tools.version.map((skill) => (
-                  <motion.span 
-                    key={skill.name} 
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-300 cursor-default flex items-center gap-2"
+                  <motion.span
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: [0, -4, 4, 0],
+                      transition: { duration: 0.3 }
+                    }}
+                    className={`${toolChipClass} hover:border-purple-400 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20`}
                   >
-                    {skill.icon} {skill.name}
+                    <motion.span whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }} className="text-2xl">
+                      {skill.icon}
+                    </motion.span>
+                    <span className="font-semibold text-sm">{skill.name}</span>
                   </motion.span>
                 ))}
               </div>
@@ -268,14 +331,58 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <p className="text-purple-400 font-bold mb-4 text-sm uppercase tracking-wider">{t('skills.automation')}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-start gap-3">
                 {tools.automation.map((skill) => (
-                  <motion.span 
-                    key={skill.name} 
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-xl text-white text-sm font-medium hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-300 cursor-default flex items-center gap-2"
+                  <motion.span
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: [0, 4, -4, 0],
+                      transition: { duration: 0.3 }
+                    }}
+                    className={`${toolChipClass} hover:border-purple-400 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20`}
                   >
-                    {skill.icon} {skill.name}
+                    <motion.span whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }} className="text-2xl">
+                      {skill.icon}
+                    </motion.span>
+                    <span className="font-semibold text-sm">{skill.name}</span>
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <p className="text-cyan-400 font-bold mb-4 text-sm uppercase tracking-wider">
+                {t('skills.aiTools')}
+              </p>
+              <div className="flex flex-wrap justify-start gap-3">
+                {tools.ai.map((skill) => (
+                  <motion.span
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: [0, -4, 4, 0],
+                      transition: { duration: 0.3 }
+                    }}
+                    className={`${toolChipClass} hover:border-cyan-400 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20`}
+                  >
+                    <motion.span whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }} className="text-2xl">
+                      {skill.icon}
+                    </motion.span>
+                    <span className="font-semibold text-sm">{skill.name}</span>
                   </motion.span>
                 ))}
               </div>
