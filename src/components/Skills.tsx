@@ -1,5 +1,5 @@
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import { FaDocker, FaPython, FaAngular  } from "react-icons/fa";
+import { FaDocker, FaPython, FaAngular } from "react-icons/fa";
 import { AiOutlineOpenAI } from "react-icons/ai";
 
 import {
@@ -20,7 +20,7 @@ import {
   SiRender,
   SiAnthropic,
   SiOllama,
-  
+
 } from "react-icons/si";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
@@ -42,7 +42,6 @@ export default function Skills() {
     { name: "HeadlessUI", icon: <span className="text-2xl">🧩</span> },
     { name: "React Hook Form", icon: <span className="text-2xl">📋</span> },
     { name: "Zod", icon: <span className="text-2xl">✔️</span> },
-    { name: "Python", icon: <FaPython className="text-2xl" /> },
     { name: "Angular", icon: <FaAngular className="text-2xl" /> },
   ];
 
@@ -58,6 +57,8 @@ export default function Skills() {
     { name: "SQL", icon: <span className="text-2xl">💾</span> },
     { name: "REST API", icon: <span className="text-2xl">🌐</span> },
     { name: "NoSQL", icon: <span className="text-2xl">🗄️</span> },
+    { name: "Python", icon: <FaPython className="text-2xl" /> },
+
   ];
 
   const tools = {
